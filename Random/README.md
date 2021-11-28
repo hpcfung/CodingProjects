@@ -31,3 +31,4 @@ similar project
 - if we generate the input data on the fly
 - then interestingly, sometimes the training loss goes down (probably just bcuz optimizer doing what it can in one iteration)
 - but overall it doesn't move
+- most importantly, the test loss stays the same throughout (never drops)
