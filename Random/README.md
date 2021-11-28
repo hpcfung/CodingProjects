@@ -26,3 +26,8 @@ similar project
 - by reducing the input length to 10, the NN can't just memorize the seq
 - but that means the training loss never goes down
 - at least training loss = test loss
+
+### 4
+- if we generate the input data on the fly
+- then interestingly, sometimes the training loss goes down (probably just bcuz optimizer doing what it can in one iteration)
+- but overall it doesn't move
