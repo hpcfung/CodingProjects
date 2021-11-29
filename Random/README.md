@@ -49,4 +49,7 @@ similar project
 - but actually, when you compute the correlation https://stackoverflow.com/questions/19428029/how-to-get-correlation-of-two-vectors-in-python, it is basically 0?
 - which is what we see when we plot the predicted values vs the true values
 
+### 3
+- since the loss is distance squared, the actual distance is a bit larger?
+
 
