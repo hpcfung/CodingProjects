@@ -51,5 +51,12 @@ similar project
 
 ### 3
 - since the loss is distance squared, the actual distance is a bit larger?
+- ie the correlation, things go above and below, so cancels out, get overall = 0?
 
+### 4
+- actually during training, the correlation does increase? eg 0.003 to 0.015
+- although sometimes it becomes more negative for some reasons (ie it goes in the negative direction)
 
+### 5
+- maximizing the correlation using the optimizer doesn't help
+- MSE keeps growing
