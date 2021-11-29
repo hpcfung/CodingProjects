@@ -56,6 +56,8 @@ similar project
 ### 4
 - actually during training, the correlation does increase? eg 0.003 to 0.015
 - although sometimes it becomes more negative for some reasons (ie it goes in the negative direction)
+- actually given how large the MSE is, and that the correlation only goes up to 1
+- MSE ~ 0.5, correlation ~ 0.08 is reasonable?
 
 ### 5
 - maximizing the correlation using the optimizer doesn't help
