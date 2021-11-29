@@ -74,3 +74,7 @@ similar project
 ### 5
 - maximizing the correlation using the optimizer doesn't help
 - MSE keeps growing
+
+### 6
+- even when testing happens 10000 after the training samples, test loss still goes down at the same rate as before
+- this indicates that the algorithm has learnt sth? not just memorization
