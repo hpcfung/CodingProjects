@@ -12,6 +12,18 @@ https://research.nccgroup.com/2021/10/15/cracking-random-number-generators-using
 
 similar project
 
+## Theory
+
+- Imagine 1,2,3,4,5,...,10,11,12,...,100,101,102,... gluing all of them to form a single sequence
+- then given 123, when asked where you are in the sequence
+- this question does not have an answer, not even in theory
+- loss of predictivity, due to insufficient information among the given information
+- need additional information, information not about the sequence itself
+- but rather the context...eg the person who asked the question, what their usual thought pattern is like
+- eg personality such that
+- often choose a small number
+- true randomness?
+
 ## Results
 ### 1
 - train loss goes down, but test loss goes up: overfitting? does not generalize
