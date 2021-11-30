@@ -1,3 +1,6 @@
 - Converted `.csv` into `.npy`
 - Plotted them as pictures with their labels, picture looks like picturse, the labels match.
 - checked softmax should use `dim = 1` to normalize the 5 output dims
+- actually that is not necessary, cross entropy loss in pytorch also includes softmax
+- plotted with one hot encoding again, still works
+- actually cross entropy loss doesn't need one hot encoding
