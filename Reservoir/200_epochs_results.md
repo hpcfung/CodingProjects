@@ -1,3 +1,4 @@
+```
 C:\Users\Cyrus\anaconda3\python.exe C:/Python_projects/Projects/Reservoir/reservoir_test.py
 epoch = 1
 batch = 0
@@ -5201,3 +5202,4 @@ training loss = 4.559287481242791e-05   testing loss = 0.055459391325712204   te
 ---------------------------------------------------------------------------------
 
 Process finished with exit code 0
+```
