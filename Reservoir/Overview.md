@@ -10,25 +10,60 @@ Conceptually, the NN can be decomposed into 3 parts: the features (the first hid
 
 ## Results
 
+### 1
+First epoch first batch, since random initialization, not good algorithm for the problem at hand, lots of learning in all layers
 
-First epoch first batch, 
 
-(200 epoch run)
-
-By around epoch 2, regression has the least change
+### 2
+(200 epoch run) By around epoch 2, regression has the least change
 
 Most learning in reservoir 2 and 3? But similar (though less) for features
 
 Reservoir 1 has the least change?
 
-Late: 
+Sometimes we see clear pattern: the deeper it goes, the less learning
+
+eg 700 epoch run, around epoch 4, test accuracy ~90%, test accuracy still going up
+
+Very clear pattern in that regime
+
+### 2.5
+eg 700 epoch run, test accuracy plateaued at 0.98 by epoch 18 (though the training loss is getting stochastic)
+
+The pattern is still clear (deeper layer less learning)
+
+After that, you start to see more exceptions
+
+eg reservoir 2 learns more than reservoir 1
+
+After that reservoir 2 starts to approach features 
+
+By 700 epoch run, epoch 27, reservoir 2 often exceeds features
+
+By 700 epoch run, epoch 30, we get an inverted V graph: most learning happens at the center, reservoir 2
+
+Learning goes down as you move to either side
+
+
+### 3
+Late: eg 700 epoch run, test accuracy routinely reaches 0.986 by epoch 60, maxed out
+
+Also the training loss is experiencing a lot of stochasticity
+
+Most of the learning happens in the upper layers
+
+Peak at reservoir 3
+
+Reservoir 1,2,3 and regression have roughly the same learning
+
+Features: much less learning
 
 
 When overfitting, most of the learning occurs in the reservoir?
 
 Changing the algorithm structure, towards "rote memorization"?
 
-Counterarguments 
+## Counterarguments to overfitting = learning only happens in the higher layers
 
 ### 1
 this is just fine-tuning?
