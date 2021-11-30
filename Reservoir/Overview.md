@@ -10,6 +10,8 @@ Conceptually, the NN can be decomposed into 3 parts: the features (the first hid
 
 ## Results
 
+(Unless specified, uses Adam)
+
 ### 1
 First epoch first batch, since random initialization, not good algorithm for the problem at hand, lots of learning in all layers
 
@@ -62,6 +64,15 @@ Features: much less learning
 When overfitting, most of the learning occurs in the reservoir?
 
 Changing the algorithm structure, towards "rote memorization"?
+
+### SGD
+SGD converges much more slowly. However the qualitative behavior seems to be the same (at the given test accuracy)
+
+Except regression tends to have the most learning? Even when test accuracy = 0.9
+
+Quite consistent from beginning to the end
+
+For both SGD 200 and 700 epoch runs
 
 ## Counterarguments to overfitting = learning only happens in the higher layers
 
