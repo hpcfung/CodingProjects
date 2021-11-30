@@ -1,0 +1,3 @@
+- Converted `.csv` into `.npy`
+- Plotted them as pictures with their labels, picture looks like picturse, the labels match.
+- checked softmax should use `dim = 1` to normalize the 5 output dims
