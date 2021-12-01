@@ -117,6 +117,38 @@ By epoch 76, reservoir 2 is now the peak (although regression can be high someti
 
 This holds until the end?
 
+### Yet another architecture
+
+If I do 20, 400, 20, 400
+
+Then the peak is stuck at reservoir 1? (400) Never goes to reservoir 2? (20)
+
+Other than that all patterns still holds
+
+ie the peaks go to the two 400 layers
+
+we forced them to be the computational layers?
+
+### frozen reservoir
+regression larger than features initially
+
+By epoch 6, features larger than regression (test accuracy 0.95)
+
+Epoch 35, start to reverse, (test accuracy 0.981)
+
+### frozen features vs regression
+frozen features limit test accuracy to around 0.91, but frozen regression has no effect (still 0.986)
+
+good features: knows what to look?
+
+presumably, the regression weights are diverse enough, we can just assign them?
+
+in fact frozen regression slightly better, 0.987
+
+prevented overfitting? (still some, just not that much?)
+
+although train loss doesn't go as low as otherwise possible
+
 ## Counterarguments to overfitting = learning only happens in the higher layers
 
 ### 1
