@@ -175,6 +175,54 @@ Test accuracy goes up until the end
 
 (reduced batch size means that at the same number of epochs, there have been fewer iterations)
 
+# Random labels
+
+## 150, 150, 150, 150
+Has to rely on memorization
+
+So large learning in the computational layers early on?
+
+That said, still need to learn features, to recognize the images
+
+U-shaped? reservoir 2 and 3 are lower than the others
+
+Test accuracy goes to 0.2, ie completely random; no overfit, since the labels are random anyway
+
+But if you go far enough, eg epoch 367, inverted-V? peak at reservoir 2
+
+After that it goes to deeper = less learning, until epoch 400
+
+Train loss cannot go below 0.7, ie this indicates the architecture is not expressive enough to memorize everything?
+
+Hence it doesn't really overfit?
+
+### Frozen reservoir
+no rebounce, but much slower convergence
+
+ie needs to walk a lot more steps to reach the minima
+
+this suggests that the global minima are rarer?
+
+## Different architecture: 400, 400, 400, 400
+
+Poor convergence? Train loss drops to 0.26, then bounces, then drops and repeats
+
+Highly rugged loss landscape?
+
+Mostly follows deeper = less learning? eg epoch 227 onwards?
+
+Actually, if you freeze the reservoir, the train loss can go down to 0.09
+
+## 1200, 1200, 1200, 1200
+deeper = less learning
+
+then inverted-V, peak at reservoir 3
+
+this time, no rebounce
+
+### frozen reservoir
+converged slower
+
 ## Counterarguments to overfitting = learning only happens in the higher layers
 
 ### 1
