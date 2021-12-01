@@ -2,15 +2,23 @@ Here we have a simple neural network (NN) with 6 layers (4 hidden layers), train
 Conceptually, the NN can be decomposed into 3 parts: the features (the first hidden layer), the "reservoir" 
 (the 2-4th hidden layers), and "regression" (the final neuron).
 
-### Features
+Features and regression: interface with input and output?
 
-### Reservoir
+reservoir = where the computation is actually done?
 
-### Regression
+But actually, there is no real distinction between features and computation?
+
+Features = computation on raw image?
+
+Reference: https://karpathy.medium.com/software-2-0-a64152b37c35
 
 ## Results
 
 (Unless specified, uses Adam)
+
+Batch size = 8192 to minimize the effect of stochasticity
+
+All hidden layers has 150 neurons
 
 ### 1
 First epoch first batch, since random initialization, not good algorithm for the problem at hand, lots of learning in all layers
@@ -74,6 +82,21 @@ Quite consistent from beginning to the end
 
 For both SGD 200 and 700 epoch runs
 
+Keeps overshoot, maybe?
+
+### Different architecture
+First hidden layer 150 neurons, all subsequent layers: 50 neurons
+
+700 epochs:
+
+reservoir 3 is the peak before epoch 5 (test accuracy ~0.92)
+
+But other than that, deeper = less learning
+
+By epoch 6, reservoir 3 dips below features; strictly deeper = less learning
+
+By epoch 31, reservoir 1 is the peak, test accuracy plateaud at 0.981
+
 ## Counterarguments to overfitting = learning only happens in the higher layers
 
 ### 1
@@ -90,5 +113,9 @@ The final batch is smaller, induces stochasticity?
 a small change in the features layer, induces a larger change in the later layers
 
 need a relatively large change in weights in the final layers to compensate
+
+counter: deeper layers are actually not that sensitive to the first layers?
+
+ie change filter slightly, still roughly extracts the same feature?
 
 
