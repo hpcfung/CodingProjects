@@ -22,6 +22,8 @@ Reference: https://karpathy.medium.com/software-2-0-a64152b37c35
 
 Batch size = 8192 to minimize the effect of stochasticity
 
+Learning rate = 1e-3
+
 All hidden layers has 150 neurons
 
 ### 1
@@ -148,6 +150,30 @@ in fact frozen regression slightly better, 0.987
 prevented overfitting? (still some, just not that much?)
 
 although train loss doesn't go as low as otherwise possible
+
+### Reduced training set
+
+Size 8192
+
+At the beginning, deeper = less learning, except peak at reservoir 1
+
+Peak at features by epoch 7
+
+Peak shifts to reservoir 1 by epoch 48 (test accuracy plateaued at 0.975)
+
+Peak shifts to reservoir 2 by epoch 86
+
+Peak shifts to reservoir 3 by epoch 114, continues till the end
+
+Despite more than halving the training set, the test accuracy is still high
+
+Size 2048
+
+Strange enough, there doesn't seem to be any overfitting?
+
+Test accuracy goes up until the end
+
+(reduced batch size means that at the same number of epochs, there have been fewer iterations)
 
 ## Counterarguments to overfitting = learning only happens in the higher layers
 
