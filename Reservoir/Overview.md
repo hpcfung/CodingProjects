@@ -10,6 +10,10 @@ But actually, there is no real distinction between features and computation?
 
 Features = computation on raw image?
 
+Counter: features = initial data processing?
+
+once the data has been manipulated into the right format, can do the actual computation?
+
 Reference: https://karpathy.medium.com/software-2-0-a64152b37c35
 
 ## Results
@@ -95,7 +99,23 @@ But other than that, deeper = less learning
 
 By epoch 6, reservoir 3 dips below features; strictly deeper = less learning
 
-By epoch 31, reservoir 1 is the peak, test accuracy plateaud at 0.981
+By epoch 31, reservoir 1 is the peak, test accuracy plateaued at 0.981
+
+### Another architecture
+
+hidden layers: 150, 50, 300, 20
+
+Initially, inverted V-shape (learning to use the right algorithm/computation for this problem?)
+
+peak at reservoir 3: kind of by design (most number of neurons, bulk of the computation?)
+
+By epoch 6, entered the deeper = less learning regime?
+
+By epoch 35, reservoir 1 is now the peak (test accuracy plateaued at 0.985)(inverted V-shape again)
+
+By epoch 76, reservoir 2 is now the peak (although regression can be high sometimes)
+
+This holds until the end?
 
 ## Counterarguments to overfitting = learning only happens in the higher layers
 
