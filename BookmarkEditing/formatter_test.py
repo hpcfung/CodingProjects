@@ -32,10 +32,9 @@ def calc_prefix(depth1,depth2,line,ch,sec,subsec):
     return new_line,ch,sec,subsec
 
 def check_if_skip(line):
-    avoid_these = ['Foreword',
-                   'Preface',
-                   'Acknowledgments',
-                   'List of symbols',
+    avoid_these = ['Preface',
+                   'Contents',
+                   'References',
                    'Index']
     flag = False
     for candidate in avoid_these:
@@ -46,7 +45,8 @@ def check_if_skip(line):
 
 
 if __name__ == "__main__":
-    file1 = open('QIP_implement.txt', 'r')
+    input_filename = 'Szeliski'
+    file1 = open(input_filename+'.txt', 'r')
     Lines = file1.readlines()
     Lines2 = Lines.copy()
 
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     for i,line in enumerate(Lines):
         old_depth = depth
         print(line)
-        if 'Bibliography' in line:
+        if 'Linear algebra and numerical techniques' in line:
             skip_all = True
         if skip_all:
             new_line = line
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     file1.close()
 
-    file2 = open('Implement_EDITED.txt', 'w')
+    file2 = open(input_filename+'_NUMBERED.txt', 'w')
     file2.writelines(Lines2)
     file2.close()
 
