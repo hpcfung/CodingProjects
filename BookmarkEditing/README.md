@@ -4,7 +4,7 @@
 - Note: for best effects, one should modify the code to suit the particular pdf
   - eg to avoid adding section numbers to "Preface", add it to `avoid_these`
   - also the script ignores all bookmarks after "Bibliography"
-
-# numbering
 - Toggle `omit_deep_index` and `if depth > 3:`
 - note: `Index` might show up in a section title, so use eg `Index/571` in `skip_all`
+# text to bk
+- skips empty lines automatically (ie `\n`)
