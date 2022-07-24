@@ -6,4 +6,4 @@
   - also the script ignores all bookmarks after "Bibliography"
 
 # numbering
-- note: `Index` might show up in a section title, so use `Index/571` in `skip_all`
+- note: `Index` might show up in a section title, so use eg `Index/571` in `skip_all`
