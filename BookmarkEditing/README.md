@@ -6,4 +6,5 @@
   - also the script ignores all bookmarks after "Bibliography"
 
 # numbering
+- Toggle `omit_deep_index` and `if depth > 3:`
 - note: `Index` might show up in a section title, so use eg `Index/571` in `skip_all`
