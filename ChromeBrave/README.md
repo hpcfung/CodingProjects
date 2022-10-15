@@ -8,3 +8,5 @@ https://developer.chrome.com/docs/extensions/
 
 right click = context menu
 https://developer.chrome.com/docs/extensions/reference/contextMenus/
+
+Goal: open link in Brave through context menu in Chrome
