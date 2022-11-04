@@ -12,6 +12,12 @@ https://www.freecodecamp.org/news/web-application-security-understanding-the-bro
 
 https://scrapeops.io/web-scraping-playbook/403-forbidden-error-web-scraping/#:~:text=The%20solution%20to%20this%20problem,scraper%20or%20a%20real%20user.
 
+https://github.com/alex/what-happens-when
+
 network, request, header
 
 referrer policy, strict-origin-when-cross-origin
+
+request initiator chain
+
+imgs are in source pane
