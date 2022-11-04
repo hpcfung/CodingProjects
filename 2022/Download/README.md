@@ -21,3 +21,5 @@ referrer policy, strict-origin-when-cross-origin
 request initiator chain
 
 imgs are in source pane
+
+https://stackoverflow.com/questions/60657201/why-are-some-image-url-can-only-display-inside-html-img-src-urllink-but-can
