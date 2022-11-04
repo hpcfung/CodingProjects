@@ -4,7 +4,7 @@ use source: error 403
 
 how does chrome load it?
 
-drag picture, base64, convert to jpg
+drag picture, base64, convert to jpg = data url
 
 https://web.dev/howbrowserswork/
 
