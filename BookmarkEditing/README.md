@@ -11,3 +11,5 @@
 
 # computer vision
 https://pyimagesearch.com/2020/05/25/tesseract-ocr-text-localization-and-detection/
+
+order of results = lexicographical order (x first, then y)
