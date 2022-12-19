@@ -8,3 +8,6 @@
 - note: `Index` might show up in a section title, so use eg `Index/571` in `skip_all`
 # text to bk
 - skips empty lines automatically (ie `\n`)
+
+# computer vision
+https://pyimagesearch.com/2020/05/25/tesseract-ocr-text-localization-and-detection/
