@@ -33,3 +33,5 @@ particularly patterns that nest instances of the same pattern inside themselves.
 section shows that regular expressions are not always enough in other aspects."
 
 Build Your Own Programming Language: A programmer's guide to designing compilers, interpreters, and DSLs for solving modern computing problems
+
+parsing in romaji, hiragana, or with Kanji?
