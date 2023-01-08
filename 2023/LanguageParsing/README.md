@@ -26,3 +26,10 @@ actually same problem, identifier, programming language
 solved problem?
 
 existing similar software? parsing, grammar highlighting
+
+"If you take a theory of computation course, you'll probably be treated to proof that regular
+expressions cannot match some common patterns that occur in programming languages,
+particularly patterns that nest instances of the same pattern inside themselves. This
+section shows that regular expressions are not always enough in other aspects."
+
+Build Your Own Programming Language: A programmer's guide to designing compilers, interpreters, and DSLs for solving modern computing problems
