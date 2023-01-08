@@ -35,3 +35,7 @@ section shows that regular expressions are not always enough in other aspects."
 Build Your Own Programming Language: A programmer's guide to designing compilers, interpreters, and DSLs for solving modern computing problems
 
 parsing in romaji, hiragana, or with Kanji?
+
+either way, any of these input formats, should transform into the one used for processing
+
+(how does it affect syntax highlighting tho)
