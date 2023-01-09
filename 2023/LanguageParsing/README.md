@@ -47,3 +47,9 @@ grammar words should be in hiragana, not kanji
 so mixed kanji is ok
 
 in fact probably helps with parsing, avoids nesting
+
+ideally: need a way to detect all inflections (present even in grammar phases)
+
+manually highlight verbs
+
+use webscraping to get definitions?
