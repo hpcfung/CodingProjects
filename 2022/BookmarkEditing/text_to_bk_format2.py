@@ -12,16 +12,19 @@ def add_prefix(line):
     if with_parts:
         if line[0:4] == 'Part':
             return line
-    if line[0:7] == 'Chapter': #  line[0:3] == 'Ch.'
+    if line[0:3] == 'Ch.': #  line[0:7] == 'Chapter'
         if with_parts:
             return '\t' + line
         else:
             return line
     # modify this depending on doc
-    tab_list = ['Historical Notes','References','Exercises']
+    tab_list = [] # 'Historical Notes','References','Exercises'
     for check_word in tab_list:
         if check_word in line: # line[0:9] == 'Exercises':
-            return '\t\t' + line # '\t'
+            return '\t' + line
+
+    if line[0:6] == 'Design' or line[0:3] == 'The':
+        return '\t\t' + line
 
     prefix = line.partition(" ")[0]
     depth = prefix.count('.')
@@ -63,32 +66,32 @@ def add_suffix(line):
 if __name__ == "__main__":
     """
     Before use:
-    0. Change Ch.
+    0. Change Ch. (actually, Ch itself is not necessary?)
     
     1. Change input_filename
     2. Change with_parts (eg if there is Part 1, Part 2, ...)
        - Style: Part or PART at the beginning of add_prefix
     3. Change offset and possibly offset2
-    4. Add if blocks in add_prefix() to deal with exceptions (under 'modify this depending on doc')
+    4. Add if blocks in add_prefix() to deal with exceptions (under '# modify this depending on doc')
        - eg Exercises in each chapter should be tabbed but does not by default
        - compare eg A.1 is tabbed once by default
        - eg Index is not tabbed by default because it has no dots
     5. Toggle skip_after_word, and if true, change skip_word
-       - Stops adding Ch. after skip_word
+       - Stops tabbing after skip_word (return line as is)
        
     default behavior: not dots = no tab
     
     """
 
-    input_filename = 'mult'
+    input_filename = 'obj'
     file1 = open(input_filename+'_prepos.txt', 'r')
     Lines = file1.readlines()
     Lines_write = []
 
-    with_parts = True
+    with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 21
+    offset = 27
     # offset2 = 12
     # offset3 = 11
 
