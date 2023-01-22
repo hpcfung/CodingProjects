@@ -17,13 +17,14 @@ if __name__ == "__main__":
     
     Assumptions
     - assumes eg 1.1 Spontaneously broken symmetry 1, section name and page number separated by one space
+    - automatically adds Ch. to every row unless specified not to
     """
     add_ch = False
     remove_dots = False
     skip_after_word = False
     skip_word = 'Appendices'
 
-    input_filename = 'mult'
+    input_filename = 'jaeger'
     file1 = open(input_filename + '.txt', 'r')
     Lines = file1.readlines()
     Lines_write = []
