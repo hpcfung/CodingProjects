@@ -12,19 +12,23 @@ def add_prefix(line):
     if with_parts:
         if line[0:4] == 'Part':
             return line
-    if line[0:3] == 'Ch.': #  line[0:7] == 'Chapter'
+    if line[0:7] == 'Chapter': # line[0:3] == 'Ch.'
         if with_parts:
             return '\t' + line
         else:
             return line
     # modify this depending on doc
-    tab_list = [] # 'Historical Notes','References','Exercises'
+    tab_list = ['Summary','References','Problems','Further Reading','Source Listing'] # 'References','Exercises'
     for check_word in tab_list:
-        if check_word in line: # line[0:9] == 'Exercises':
+        # if check_word in line:
+        #     return '\t' + line
+
+        # if starts with check_word
+        if line[0:len(check_word)] == check_word:
             return '\t' + line
 
-    if line[0:6] == 'Design' or line[0:3] == 'The':
-        return '\t\t' + line
+    # if line[0:6] == 'Design' or line[0:3] == 'The':
+    #     return '\t\t' + line
 
     prefix = line.partition(" ")[0]
     depth = prefix.count('.')
@@ -83,7 +87,7 @@ if __name__ == "__main__":
     
     """
 
-    input_filename = 'obj'
+    input_filename = 'jaeger'
     file1 = open(input_filename+'_prepos.txt', 'r')
     Lines = file1.readlines()
     Lines_write = []
@@ -91,7 +95,7 @@ if __name__ == "__main__":
     with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 27
+    offset = 14
     # offset2 = 12
     # offset3 = 11
 
