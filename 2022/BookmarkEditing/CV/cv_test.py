@@ -2,69 +2,99 @@
 from pytesseract import Output
 import pytesseract, cv2, sys, re, pickle
 
+def page_info_dump(results):
+    print(results)
+
+    for i in range(0, len(results["text"])):
+        text = results["text"][i]
+        conf = int(results["conf"][i])
+        x = results["left"][i]
+        y = results["top"][i]
+        print("Confidence: {}".format(conf))
+        print("Text: {}".format(text))
+        print(f"{(x, y)}")
+        print("")
+
+def double_check_if_title(results,i,lb,ub):
+    h = i - 1
+    is_title = True
+    # combo = 0
+    # go back in words until reach previous line
+    while h >= 0:
+        y = results["top"][h]
+        print(f"current y = {y}, lb = {lb}, ub = {ub}")  #
+        word = results["text"][h]
+        conf = results["conf"][h]
+        print("Confidence: {}".format(conf))
+        print(repr(word))
+        print(f"h = {h}")
+        h -= 1
+        if word == '':
+            continue
+        # elif conf < min_conf:
+        #     combo += 1
+        #     if combo > 0: # probably an equation # 2
+        #         not_title = True
+        #         break
+        #     continue
+        if lb < y and y < ub: # first non trivial word is in same line; ie initial word not leftmost of line
+            is_title = False
+        else:
+            if 'figure' in word:
+                is_title = False
+                print('not title: figure X.Y cut in half in line split')
+        break  # we know is title or not by looking at first non empty word
+
+    return is_title
+
+def remove_dots(text):
+    if text[-1] == '.':
+        return text[0:-1]
+    else:
+        return text
 
 def scan_page(k):
     global all_titles
 
     page_num = str(k)
-    with open('dict/Wen'+page_num+'.pkl', 'rb') as f:
+    with open('dict/'+bookname+page_num+'.pkl', 'rb') as f:
         results = pickle.load(f)
 
+    # page_info_dump(results)
+
     for i in range(0, len(results["text"])):
+
         text = results["text"][i]
-        if re.search(r'[0-9]+\.[0-9]+(\.[0-9]+)*', text):
+        if re.search(r'[0-9]+\.[0-9]+(\.[0-9]+)*', text):  # 1.2, 1.2.3, etc
+            print('-' * 50)
             conf = int(results["conf"][i])
             x = results["left"][i]
             y = results["top"][i]
             print("Confidence: {}".format(conf))
-            print("Text: {}".format(text))
+            print("Title candidate: {}".format(text))
             print(f"{(x, y)}")
             print("")
 
-            if '(' in text or ')' in text:
-                print('not title: contains ( or )')
-                continue
+            # For Wen: Figure also of the form Fig X.Y
+            # if '(' in text or ')' in text:
+            #     print('not title: contains ( or )')
+            #     continue
 
-            title = text
+            title = remove_dots(text)
 
-            j = i + 1
             ub = y + line_space  # upper bound
             lb = y - line_space
 
-            h = i - 1
-            not_title = False
-            # combo = 0
-            while h >= 0:
-                y = results["top"][h]
-                print(f"current y = {y}, lb = {lb}, ub = {ub}") #
-                word = results["text"][h]
-                conf = results["conf"][h]
-                print("Confidence: {}".format(conf))
-                print(repr(word))
-                print(f"h = {h}")
-                h -= 1
-                if word == '':
-                    continue
-                # elif conf < min_conf:
-                #     combo += 1
-                #     if combo > 0: # probably an equation # 2
-                #         not_title = True
-                #         break
-                #     continue
-                if lb < y and y < ub:
-                    not_title = True
-                break # we know is title or not by looking at first non empty word
-
-            if not_title:
-                print('not_title\n')
-                continue
+            if double_check_if_title(results=results,i=i,lb=lb,ub=ub):
+                print('is title\n')
+                print('%' * 30)
+                print('Remainder of title:')
             else:
-                print('is title')
+                print('not_title')
+                continue
 
-            while True:
-                if j == len(results["text"]):
-                    break
-
+            j = i + 1
+            while j < len(results["text"]): # repeat until last word
                 text = results["text"][j]
                 x = results["left"][j]
                 y = results["top"][j]
@@ -88,11 +118,14 @@ if __name__ == "__main__":
     also, usually only give sec and subsec, need to merge w/ ch.
     """
 
-    min_conf = 50
-    line_space = 10
-    bookname = 'Wen'
-    min_page = 16
-    max_page = 511
+    min_conf = 5
+    line_space = 10 # narrow = better?
+    bookname = 'nand'
+    min_page = 92
+    max_page = 92
+    # Ch.1: 33, 58
+    # full book: 33, 409
+    # 92
 
     # print(pytesseract)
 
