@@ -40,7 +40,8 @@ def double_check_if_title(results,i,lb,ub):
         if lb < y and y < ub: # first non trivial word is in same line; ie initial word not leftmost of line
             is_title = False
         else:
-            if 'figure' in word:
+            clash_words = ['figure', 'Figure']
+            if any(clash_word in word for clash_word in clash_words):
                 is_title = False
                 print('not title: figure X.Y cut in half in line split')
         break  # we know is title or not by looking at first non empty word
@@ -107,7 +108,6 @@ def scan_page(k):
                     title = title + ' ' + text
                 else:
                     break
-
                 j += 1
 
             all_titles.append(title + ' ' + page_num + '\n')
@@ -122,11 +122,10 @@ if __name__ == "__main__":
     min_conf = 5
     line_space = 10 # narrow = better?
     bookname = 'nand'
-    min_page = 92
-    max_page = 92
+    min_page = 33
+    max_page = 409
     # Ch.1: 33, 58
     # full book: 33, 409
-    # 92
 
     # print(pytesseract)
 
