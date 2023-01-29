@@ -106,10 +106,11 @@ def scan_page(k):
                     print("")
                     title = title + ' ' + text
                 else:
-                    all_titles.append(title+' '+page_num+'\n')
                     break
 
                 j += 1
+
+            all_titles.append(title + ' ' + page_num + '\n')
 
 if __name__ == "__main__":
     """
