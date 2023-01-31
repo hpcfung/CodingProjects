@@ -62,11 +62,12 @@ def scan_page(k):
         results = pickle.load(f)
 
     # page_info_dump(results)
+    # sys.exit()
 
     for i in range(0, len(results["text"])):
-
         text = results["text"][i]
         if re.search(r'[0-9]+\.[0-9]+(\.[0-9]+)*', text):  # 1.2, 1.2.3, etc
+        # if re.search(r'[AB0-9]+\.[0-9]+(\.[0-9]+)*', text):  # 1.2, 1.2.3, etc
             print('-' * 50)
             conf = int(results["conf"][i])
             x = results["left"][i]
@@ -75,6 +76,11 @@ def scan_page(k):
             print("Title candidate: {}".format(text))
             print(f"{(x, y)}")
             print("")
+
+            # For nano
+            # if 180 < y and y < 195:
+            #     print('not_title: is header')
+            #     continue
 
             # For Wen: Figure also of the form Fig X.Y
             # if '(' in text or ')' in text:
@@ -114,18 +120,32 @@ def scan_page(k):
 
 if __name__ == "__main__":
     """
+    NEXT time
+    change 180-190 rule
+    change reg ex
     
     known issues: page number = pdf page number
     also, usually only give sec and subsec, need to merge w/ ch.
+    bad with equations
+    
+    get line spacing: uncomment
+    # page_info_dump(results)
+    # sys.exit()
+    
+    
+    
     """
 
     min_conf = 5
-    line_space = 10 # narrow = better?
+    line_space = 20 # narrow = better? this controls bounds around a line, should be (much) smaller than line spacing
     bookname = 'nand'
-    min_page = 33
-    max_page = 409
-    # Ch.1: 33, 58
-    # full book: 33, 409
+    min_page = 510
+    max_page = 533
+    # Ch.1: 22, 41
+    # Ch.2: 44, 56
+    # 509
+    # 510, 533
+    # full book: 22, 533
 
     # print(pytesseract)
 
