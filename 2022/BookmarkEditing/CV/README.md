@@ -6,6 +6,6 @@ run `min_page`, `max_page` for 1 page; use `page_info_dump(results)` to get line
 
 run `min_page`, `max_page` for 1 chapter
 
-single out pages with problems, debug strategy
+single out pages with problems, debug strategy (eg adjust line spacing, add code check edge cases)
 
 repeat until 1 chapter ok
