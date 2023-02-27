@@ -98,11 +98,11 @@ if __name__ == "__main__":
 
     # actual page in pdf - printed page number
     offset = 33
-    offset_list = [['10 Self-Assembly',32],
-                   ['12 Biological Mimics and',31],
-                   ['13 Interfaces and Liquid',30],
-                   ['14 Supramolecular Polymers, Gels',29],
-                   ['15 Nanochemistry',28]]
+    offset_list = [('10 Self-Assembly',32),
+                   ('12 Biological Mimics and',31),
+                   ('13 Interfaces and Liquid',30),
+                   ('14 Supramolecular Polymers, Gels',29),
+                   ('15 Nanochemistry',28)]
 
     skip_after_word = False
     skip_word = 'Appendices'
@@ -114,9 +114,9 @@ if __name__ == "__main__":
         if line == '\n':
             print('NO LINE')
         else:
-            for switch_pair in offset_list:
-                if switch_pair[0] in line:
-                    offset = switch_pair[1]
+            for (switch_prompt,new_offset) in offset_list:
+                if switch_prompt in line:
+                    offset = new_offset
 
             newline = add_prefix(line=line)
             newline = add_suffix(line=newline)
