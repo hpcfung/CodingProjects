@@ -18,7 +18,7 @@ def add_prefix(line):
         else:
             return line
     # modify this depending on doc
-    tab_list = ['Summary','Study Problems','Thought Experiment','References'] # 'References','Exercises'
+    tab_list = [] # 'References','Exercises'
     for check_word in tab_list:
         # if check_word in line:
         #     return '\t' + line
@@ -75,8 +75,9 @@ if __name__ == "__main__":
     1. Change input_filename
     2. Change with_parts (eg if there is Part 1, Part 2, ...)
        - Style: Part or PART at the beginning of add_prefix
-    3. Change offset and possibly offset2
-       - if sth in line, change to offset2
+    3. Change offset and possibly offset_list
+       - eg ('10 Self-Assembly',32): if '10 Self-Assembly' in line, change offset to 32
+       - if not necessary, leave offset_list = []
     4. Add if blocks in add_prefix() to deal with exceptions (under '# modify this depending on doc')
        - eg Exercises in each chapter should be tabbed but does not by default
        - compare eg A.1 is tabbed once by default
@@ -89,7 +90,7 @@ if __name__ == "__main__":
     
     """
 
-    input_filename = 'sup'
+    input_filename = 'control'
     file1 = open(input_filename+'_prepos.txt', 'r')
     Lines = file1.readlines()
     Lines_write = []
@@ -97,12 +98,13 @@ if __name__ == "__main__":
     with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 33
-    offset_list = [('10 Self-Assembly',32),
-                   ('12 Biological Mimics and',31),
-                   ('13 Interfaces and Liquid',30),
-                   ('14 Supramolecular Polymers, Gels',29),
-                   ('15 Nanochemistry',28)]
+    offset = 13
+    offset_list = []
+    # offset_list = [('10 Self-Assembly',32),
+    #                ('12 Biological Mimics and',31),
+    #                ('13 Interfaces and Liquid',30),
+    #                ('14 Supramolecular Polymers, Gels',29),
+    #                ('15 Nanochemistry',28)]
 
     skip_after_word = False
     skip_word = 'Appendices'
