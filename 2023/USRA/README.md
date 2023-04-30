@@ -22,3 +22,5 @@ so repeaet unit cell?
 
 
 `scale` is a real number that re-scales the lattice constant and atom locations.
+
+`generate_sites` return atoms, 1st argument of `rydberg_h`?
