@@ -1,4 +1,9 @@
+## Dependencies
+- `Bloqade'
+- `BloqadeQMC'
+- `Plots`
 
+## Code
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
 `AbstractLattice{D}` implemented as abstract type  
 structs defined include
