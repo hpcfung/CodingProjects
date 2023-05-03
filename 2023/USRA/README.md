@@ -22,8 +22,6 @@ structs defined include
 `ChainLattice()`: why `()`?  
 initialize struct but this struct has no fields?  
 but it is still a subtype of `AbstractLattice`?  
-"Abstract types cannot be instantiated"  
-https://docs.julialang.org/en/v1/manual/types/#:~:text=Abstract%20types%20cannot%20be%20instantiated
 
 syntax `abstract type Pointy{T} end`  
 `Pointy{T}` is a distinct abstract type for each type or integer value of `T`
