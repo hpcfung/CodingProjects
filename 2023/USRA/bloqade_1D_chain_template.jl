@@ -12,7 +12,7 @@ using Statistics
 # 1D chain
 nsites = 9
 atoms = generate_sites(ChainLattice(), nsites, scale = 5.72)
-1D chain end
+# 1D chain end
 
 
 Ω = 2π * 4
