@@ -3,6 +3,7 @@
 - `BloqadeQMC`
 - `Plots`
 - `Yao`
+- `Measurements`
 
 ## Code
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
