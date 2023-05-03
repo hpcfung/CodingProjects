@@ -1,7 +1,8 @@
 ## Dependencies
-- `Bloqade'
-- `BloqadeQMC'
+- `Bloqade`
+- `BloqadeQMC`
 - `Plots`
+- `Yao`
 
 ## Code
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
