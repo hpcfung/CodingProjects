@@ -10,3 +10,5 @@ Exercise: wrie `.jl` using nano
 
 
 `julia script-name.jl`
+
+file transfer: globus
