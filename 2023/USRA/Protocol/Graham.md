@@ -11,6 +11,7 @@ Exercise: wrie `.jl` using nano
 
 `julia script-name.jl`
 
-file transfer: globus
+file transfer: globus  
+from/to: `computecanada#graham-globus`
 
 VS code, VS Julia extension
