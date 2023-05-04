@@ -19,5 +19,5 @@ installing dependencies (desktop, laptop)
 ssh
 
 tests
-
+- running 1D Bloqade QMC in login node
 - does savefig work in Slurm + SBATCH memory
