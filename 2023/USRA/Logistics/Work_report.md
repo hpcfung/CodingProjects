@@ -17,3 +17,7 @@ learning Julia and understanding the bloqade package, going through the tutorial
 installing dependencies (desktop, laptop)
 
 ssh
+
+tests
+
+- does savefig work in Slurm + SBATCH memory
