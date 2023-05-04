@@ -66,3 +66,7 @@ to use it, argument of the function `rydberg_qmc`
 https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#Hamiltonian-Expressions
 https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydberg_h
 `BloqadeExpr/src/types.jl` or just source button in link above (lower right corner of whole box)
+
+`rydberg_qmc` is an instance of the struct `Rydberg`  
+includes atom positions  
+https://queracomputing.github.io/Bloqade.jl/dev/tutorials/7.QMC/main/#:~:text=must%20be%20qualified-,The%20object,-h_qmc%20still%20contains
