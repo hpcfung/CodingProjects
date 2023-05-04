@@ -39,4 +39,24 @@ so repeat unit cell?
 
 `scale` is a real number that re-scales the lattice constant and atom locations.
 
-`generate_sites` return atoms, 1st argument of `rydberg_h`? (internal name: `atom_positions`)
+`generate_sites` return `atoms`, 1st argument of `rydberg_h`? (internal name: `atom_positions`)
+
+type:
+```
+9-element AtomList{1, Float64}:
+ (0.0,)
+ (5.72,)
+ (11.44,)
+ (17.16,)
+ (22.88,)
+ (28.599999999999998,)
+ (34.32,)
+ (40.04,)
+ (45.76,)
+```
+`NTuple{D,T}`: a tuple type containing exactly `D` elements of type T  
+(`D`-dimensional, `D` components in coordinates)  
+`locations = NTuple{D,T}[]`: creates an empty array  
+`AtomList(_generate_sites(...))`: instance of `AtomList` (`struct`)
+
+`rydberg_h`: Create a rydberg hamiltonian
