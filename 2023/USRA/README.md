@@ -59,4 +59,10 @@ type:
 `locations = NTuple{D,T}[]`: creates an empty array  
 `AtomList(_generate_sites(...))`: instance of `AtomList` (`struct`)
 
-`rydberg_h`: Create a rydberg hamiltonian
+`rydberg_h`: Create a rydberg hamiltonian  
+type: `RydbergHamiltonian`  
+to use it, argument of the function `rydberg_qmc`
+
+https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#Hamiltonian-Expressions
+https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydberg_h
+`BloqadeExpr/src/types.jl` or just source button in link above (lower right corner of whole box)
