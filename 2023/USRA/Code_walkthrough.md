@@ -85,6 +85,13 @@ https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#Flo
 
 `EQ_MCS = 100`: number of iterations for equilibration/during equilibration phase
 `MCS = 100_000`: number of Monte Carlo steps
+
+`M` is the cutoff
+
+`BinaryThermalState` return type is `BloqadeQMC.QMCState`? struct?
+
+`d = Diagnostics();` did nothing?
+
 ```
 [mc_step_beta!(rng, ts, h_qmc,β, d, eq=true) for i in 1:EQ_MCS]
 ```
