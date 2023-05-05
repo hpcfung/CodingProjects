@@ -89,6 +89,10 @@ https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#Flo
 `M` is the cutoff
 
 looks like the function `BinaryThermalState` is recursive and returns the last line `BinaryThermalState(z, init_op_list(cutoff, Val{K}()))::BinaryThermalState{K, typeof(z)}`?  
+https://docs.julialang.org/en/v1/manual/functions/#man-functions return keyword omitted
+The value returned by a function is the value of the last expression evaluated
+https://docs.julialang.org/en/v1/manual/functions/#The-return-Keyword
+
 where is the type `BinaryThermalState{K, typeof(z)}` defined?
 `BinaryThermalState` return type is `BloqadeQMC.QMCState`? struct?
 
