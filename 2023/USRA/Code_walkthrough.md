@@ -12,9 +12,9 @@ structs defined include
 - `KagomeLattice` (2D)
 - `RectangularLattice` (2D)
 
-`ChainLattice()`: why `()`?  
-initialize struct but this struct has no fields?  
-but it is still a subtype of `AbstractLattice`?  
+Note usage in code: `ChainLattice()` with `()` at the end
+initialize struct but this struct has no fields  
+struct subtype of `AbstractLattice`
 
 syntax `abstract type Pointy{T} end`  
 `Pointy{T}` is a distinct abstract type for each type or integer value of `T`
