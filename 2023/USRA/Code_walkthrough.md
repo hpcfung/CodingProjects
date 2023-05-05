@@ -88,6 +88,8 @@ https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#Flo
 
 `M` is the cutoff
 
+looks like the function `BinaryThermalState` is recursive and returns the last line `BinaryThermalState(z, init_op_list(cutoff, Val{K}()))::BinaryThermalState{K, typeof(z)}`?  
+where is the type `BinaryThermalState{K, typeof(z)}` defined?
 `BinaryThermalState` return type is `BloqadeQMC.QMCState`? struct?
 
 `d = Diagnostics();` did nothing?
