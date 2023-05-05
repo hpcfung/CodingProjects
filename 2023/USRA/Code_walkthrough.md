@@ -79,3 +79,19 @@ struct Rydberg{O,M <: UpperTriangular,UΩ <: AbstractVector{Float64}, Uδ <: Abs
     energy_shift::Float64
 end
 ```
+### MC
+`100_000`: The underscore `_` can be used as digit separator
+https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#Floating-Point-Numbers-1:~:text=be%20used%20as-,digit%20separator,-%3A
+
+`EQ_MCS = 100`: number of iterations for equilibration/during equilibration phase
+`MCS = 100_000`: number of Monte Carlo steps
+```
+[mc_step_beta!(rng, ts, h_qmc,β, d, eq=true) for i in 1:EQ_MCS]
+```
+array not saved, one liner for 100 iterations?
+each `mc_step_beta!` does one MC iteration on `ts`?
+
+size of `occs`: `(MCS, nsites)`
+same MC code runs for 1D chain/2D square lattice?
+
+`densities_QMC`: mean across all MC iterations at each lattice site
