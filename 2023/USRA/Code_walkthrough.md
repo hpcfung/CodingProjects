@@ -64,10 +64,14 @@ https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydber
 includes atom positions  
 https://queracomputing.github.io/Bloqade.jl/dev/tutorials/7.QMC/main/#:~:text=must%20be%20qualified-,The%20object,-h_qmc%20still%20contains
 
-
+The object h_qmc still contains all the previous information about the lattice geometry as well as the Hamiltonian parameters 
+Ω
+Ω and 
+Δ
+Δ. However, the object now also stores the distribution of weights from which the algorithm will sample. 
 ```
 struct Rydberg{O,M <: UpperTriangular,UΩ <: AbstractVector{Float64}, Uδ <: AbstractVector{Float64}, A} <: AbstractRydberg{O}
-    op_sampler::O
+    op_sampler::O   # distribution of weights sampled
     V::M          # interaction matrix
     Ω::UΩ 
     δ::Uδ
