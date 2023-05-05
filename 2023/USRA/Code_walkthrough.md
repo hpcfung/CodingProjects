@@ -63,3 +63,15 @@ https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydber
 `rydberg_qmc` is an instance of the struct `Rydberg`  
 includes atom positions  
 https://queracomputing.github.io/Bloqade.jl/dev/tutorials/7.QMC/main/#:~:text=must%20be%20qualified-,The%20object,-h_qmc%20still%20contains
+
+
+```
+struct Rydberg{O,M <: UpperTriangular,UΩ <: AbstractVector{Float64}, Uδ <: AbstractVector{Float64}, A} <: AbstractRydberg{O}
+    op_sampler::O
+    V::M          # interaction matrix
+    Ω::UΩ 
+    δ::Uδ
+    atoms::A          # atom positions
+    energy_shift::Float64
+end
+```
