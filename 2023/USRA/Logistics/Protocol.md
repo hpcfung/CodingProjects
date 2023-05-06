@@ -1,3 +1,5 @@
+Julia: add to path
+
 ## Graham
 
 `ssh username@graham.computecanada.ca`
@@ -17,3 +19,5 @@ file transfer: globus
 from/to: `computecanada#graham-globus`
 
 VS code, VS Julia extension
+
+VS code: remote development extension (used config file in user)
