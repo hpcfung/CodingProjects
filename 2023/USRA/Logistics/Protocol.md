@@ -21,3 +21,5 @@ from/to: `computecanada#graham-globus`
 VS code, VS Julia extension
 
 VS code: remote development extension (used config file in user)
+https://saket404.github.io/ssh/ssh-using-vscode/
+
