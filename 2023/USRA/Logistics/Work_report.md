@@ -23,4 +23,6 @@ tests
 - does savefig work in Slurm + SBATCH memory
 
 ## Week 2
-install python packages
+python env on Graham
+
+ran minimal pytorch example on Graham
