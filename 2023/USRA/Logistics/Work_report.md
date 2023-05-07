@@ -14,10 +14,13 @@ tutorial videos through the CCDB website
 
 learning Julia and understanding the bloqade package, going through the tutorial and playing with the code
 
-installing dependencies (desktop, laptop)
+installing dependencies (desktop, laptop, Graham)
 
 ssh
 
 tests
 - running 1D Bloqade QMC in login node
 - does savefig work in Slurm + SBATCH memory
+
+## Week 2
+install python packages
