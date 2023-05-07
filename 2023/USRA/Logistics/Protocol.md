@@ -28,6 +28,7 @@ but are they the same?
 
 https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository
 
+Connect in VS remote:
 F1 > connect
 
 setup
