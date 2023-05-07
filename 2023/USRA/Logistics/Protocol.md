@@ -33,7 +33,7 @@ F1 > connect
 setup
 ```
 module load python/3.9
-virtualenv --no-download PYTORCH_TEST_ENV
+virtualenv --no-download PYTORCH_3_9_ENV
 source PYTORCH_TEST_ENV/bin/activate
 module load scipy-stack
 pip install --no-index --upgrade pip
@@ -45,13 +45,9 @@ reactivate
 (cd to pytorch_test in scratch first)
 ```
 module load python/3.9 scipy-stack
-source PYTORCH_TEST_ENV/bin/activate
-module unload python/3.9.6
-module load python/3.9
+source PYTORCH_3_9_ENV/bin/activate
 python minimal_pytorch_template.py
 ```
-things that don't work:
-- remove unload, load part
-- load 3.10 directly
+
 
 
