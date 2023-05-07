@@ -25,3 +25,5 @@ https://saket404.github.io/ssh/ssh-using-vscode/
 
 git the git development community? not google Git for Windows?  
 but are they the same?
+
+F1 > connect
