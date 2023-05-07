@@ -8,8 +8,9 @@ import matplotlib.pyplot as plt
 def target_function(x):
     return x**2
 
+# the dataloader is necessary for batching/shuffling
 class NN_Dataset(T.utils.data.Dataset):
-    def __init__(self, TEST):
+    def __init__(self, TEST): # TEST: additional argument? inheritance?
         if TEST == True:
             x_tmp = np.linspace(start=-5,stop=5,num=50)
             y_tmp = target_function(x_tmp)
@@ -37,6 +38,7 @@ class NeuralNetwork(nn.Module):
         hidden_layer_width1 = 100
         hidden_layer_width2 = 100
 
+        # pytorch syntax: each argument is an NN layer
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(1, hidden_layer_width1),
             nn.ReLU(),
@@ -46,19 +48,20 @@ class NeuralNetwork(nn.Module):
         )
 
     def forward(self, x):
+        # the NN is a mathematical and code function
         return self.linear_relu_stack(x)
 
 def train_loop(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
     for batch, (X, y) in enumerate(dataloader):
         # Compute prediction and loss
-        pred = model(X)
+        pred = model(X) # the model is a mathematical and code function
         loss = loss_fn(pred, y)
 
-        # Backpropagation
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+        # Backpropagation: boiler plate code (don't change this)
+        optimizer.zero_grad() # this is necessary
+        loss.backward() # populate computational graph
+        optimizer.step() # update the parameters according to the optimizer
 
         if batch % 100 == 0:
             current = batch * len(X)
@@ -98,6 +101,7 @@ if __name__ == '__main__':
     # model
     model = NeuralNetwork().to(device)
 
+    # Easy to swap loss function and optimizer
     loss_fn = nn.MSELoss()
     optimizer = T.optim.Adam(model.parameters(), lr=learning_rate)
     print()
