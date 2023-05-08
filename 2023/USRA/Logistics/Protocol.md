@@ -85,6 +85,7 @@ cd to `RydbergGPT/container`
 in general: `apptainer build my_container.sif my_recipe.def`
 put `data` folder under `RydbergGPT` (after unzippinng)(data should contain 4 sub folders) 
 
+on cluster also ran `pip install -e .`
 
 Please select a module to run apptainer
 chose newest: `apptainer/1.1.6 StdEnv/2020`
