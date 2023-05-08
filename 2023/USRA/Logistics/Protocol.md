@@ -100,10 +100,21 @@ results saved; run `tensorboard.sh`
 
 test run
 ```
-module purge
+module purge # if purged, apptainer command not found?
 # cd to RydbergGPT dir first
 apptainer exec container/RydbergGPT_container.sif python scratch/gpt_test/RydbergGPT/train.py --config_name=gpt2
+apptainer exec container/RydbergGPT_container.sif python scratch/hello_world.py --config_name=gpt2
+apptainer exec gpt_test/RydbergGPT/container/RydbergGPT_container.sif python gpt_test/RydbergGPT/train.py --config_name=gpt2
 ```
 chose newest: `apptainer/1.1.6 StdEnv/2020`
 
+does not work: `apptainer exec container/RydbergGPT_container.sif python ~/RydbergGPT/train.py --config_name=gpt2`
+`apptainer exec scratch/gpt_test/RydbergGPT/container/RydbergGPT_container.sif python scratch/gpt_test/RydbergGPT/train.py --config_name=gpt2`
+
+
+apptainer exec container/RydbergGPT_container.sif ls /scratch
+apptainer exec container/RydbergGPT_container.sif ls scratch
+apptainer exec container/RydbergGPT_container.sif ls
+
+apptainer exec container/RydbergGPT_container.sif ls scratch/gpt_test
 
