@@ -20,7 +20,15 @@ from/to: `computecanada#graham-globus`
 
 VS code, VS Julia extension
 
-VS code: remote development extension (used config file in user)
+VS code: remote development extension (used config file in user not C drive)
+https://code.visualstudio.com/docs/remote/remote-overview  
+(includes 4 extensions)  
+
+follow this
+https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host  
+fn+ F1 on laptop not F1
+add SSH host
+
 https://saket404.github.io/ssh/ssh-using-vscode/
 
 git the git development community? not google Git for Windows?  
