@@ -50,5 +50,7 @@ source PYTORCH_3_9_ENV/bin/activate
 python minimal_pytorch_template.py
 ```
 
-
+git clone, https, username, 
+https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+password = personal access token
 
