@@ -1,0 +1,32 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig         4) imkl/2020.1.217    7) libfabric/1.10.1
+  2) gentoo/2020      5) intel/2020.1.217   8) openmpi/4.0.3
+  3) gcccore/.9.3.0   6) ucx/1.8.0          9) StdEnv/2020
+INFO:    underlay of /etc/localtime required more than 50 (68) bind mounts
+/opt/conda/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libtorch_cuda_cu.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Missing logger folder: logs/lightning_logs
+fix: yaml_path = /myDir/config/config_small.yaml
+fix: data_path = /myDir/data
+Traceback (most recent call last):
+  File "/myDir/train.py", line 127, in <module>
+    main(config_path=yaml_path, config_name=config_name)
+  File "/myDir/train.py", line 83, in main
+    trainer = pl.Trainer(
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/utilities/argparse.py", line 69, in insert_env_defaults
+    return fn(self, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 393, in __init__
+    self._accelerator_connector = _AcceleratorConnector(
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py", line 157, in __init__
+    self._set_parallel_devices_and_init_accelerator()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py", line 394, in _set_parallel_devices_and_init_accelerator
+    self._devices_flag = accelerator_cls.parse_devices(self._devices_flag)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/accelerators/cpu.py", line 47, in parse_devices
+    devices = _parse_cpu_cores(devices)
+  File "/opt/conda/lib/python3.10/site-packages/lightning_fabric/accelerators/cpu.py", line 85, in _parse_cpu_cores
+    raise TypeError("`devices` selected with `CPUAccelerator` should be an int > 0.")
+TypeError: `devices` selected with `CPUAccelerator` should be an int > 0.
+
+# USER COMMENT: forgot to switch to myTrain.py (where devices=1) in exec
