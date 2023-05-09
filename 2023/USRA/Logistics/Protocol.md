@@ -36,6 +36,13 @@ but are they the same?
 
 https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository
 
+steps to pull from repo after cloning it
+```
+git remote -v
+git remote show origin
+git pull origin
+```
+
 Connect in VS remote:
 F1 > connect
 
@@ -119,3 +126,34 @@ apptainer exec container/RydbergGPT_container.sif ls
 
 apptainer exec container/RydbergGPT_container.sif ls scratch/gpt_test
 
+comment out 
+```
+    # torch>=2.0.0
+    # torchvision
+    # torchaudio
+    # torch_geometric
+    # pennylane>=0.29
+    # numpy>=1.23
+    # tensorboard>=2.12
+    # matplotlib
+    # tqdm
+    # black
+    # pandas
+    # joblib
+    # seaborn
+    # imageio
+    # pytorch-lightning
+    # # tensorboard-plugin-profile
+    # torch-tb-profiler
+    # torchsummary
+    # h5py
+    # tables
+    # pytest
+    # deepspeed
+    # torch_geometric
+ ```
+(in container?)
+ 
+module load python/3.9
+pip install -e .
+remove .egg
