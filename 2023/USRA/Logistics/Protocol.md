@@ -156,4 +156,6 @@ comment out
  
 module load python/3.9
 pip install -e .
-remove .egg
+remove .egg (but it comes back?)
+
+copy ryberggpt outside of src
