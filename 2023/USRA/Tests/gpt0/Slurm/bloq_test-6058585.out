@@ -1,9 +1,0 @@
-Runs the 1D QMC Bloqade tutorial example on Slurm.
-WARNING: both BloqadeODE and Yao export "iscached"; uses of it in module Bloqade must be qualified
-/home/hpcfung/.julia/artifacts/a11940e81955fa08adba9aabfa72b48c434a4aa1/bin/gksqt: /lib64/libc.so.6: version `GLIBC_2.18' not found (required by /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/julia/1.8.5/bin/../lib/julia/libstdc++.so.6)
-connect: Connection refused
-GKS: can't connect to GKS socket application
-
-GKS: Open failed in routine OPEN_WS
-GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
-Julia program complete
