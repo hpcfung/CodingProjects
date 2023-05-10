@@ -78,21 +78,22 @@ python RydbergGPT\setup.py install
 Classic token
 permission: tick all
 
-
+## RydbergGPT
 (local)(once in RydbergGPT cd) (-e: dev mode)  
 after set up local virt env  
 `pip install -e .`
 
-on cluster no need venv use container file
+### Container
+on cluster no need venv, use container file instead
 File > Terminal > New Terminal
 cd to `RydbergGPT/container`
-`apptainer build RydbergGPT_container.sif pytorch_recipe.def` (no need to call Singularity; apptainer under Singularity) 
+`apptainer build RydbergGPT_container.sif pytorch_recipe.def` (no need to call Singularity; Singularity now called apptainer) 
 `.sif` file: name of container
 `.def`: from which the image is built
 in general: `apptainer build my_container.sif my_recipe.def`
 put `data` folder under `RydbergGPT` (after unzippinng)(data should contain 4 sub folders) 
 
-on cluster also ran `pip install -e .`
+on cluster also ran `pip install -e .` (with some commented out)
 
 Please select a module to run apptainer
 chose newest: `apptainer/1.1.6 StdEnv/2020`
