@@ -1,0 +1,93 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig         4) imkl/2020.1.217    7) libfabric/1.10.1
+  2) gentoo/2020      5) intel/2020.1.217   8) openmpi/4.0.3
+  3) gcccore/.9.3.0   6) ucx/1.8.0          9) StdEnv/2020
+INFO:    underlay of /etc/localtime required more than 50 (68) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (206) bind mounts
+/opt/conda/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libtorch_cuda_cu.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Missing logger folder: logs/lightning_logs
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/configuration_validator.py:70: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+pytorch version: 2.0.1+cu117
+is cuda available: True
+cuda version: 11.7
+fix: yaml_path = /myDir/config/config_small.yaml
+device = cuda
+cuda device count = 1
+fix: data_path = /myDir/data
+fix: devices=1; accelerator=gpu
+Traceback (most recent call last):
+  File "/myDir/myTrain.py", line 137, in <module>
+    main(config_path=yaml_path, config_name=config_name)
+  File "/myDir/myTrain.py", line 108, in main
+    trainer.fit(rydberg_gpt_trainer, train_loader, val_loader)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 915, in _run
+    call._call_callback_hooks(self, "on_fit_start")
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 190, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/callbacks/model_summary.py", line 59, in on_fit_start
+    model_summary = self._summary(trainer, pl_module)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/callbacks/model_summary.py", line 73, in _summary
+    return summarize(pl_module, max_depth=self._max_depth)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/utilities/model_summary/model_summary.py", line 431, in summarize
+    return ModelSummary(lightning_module, max_depth=max_depth)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/utilities/model_summary/model_summary.py", line 189, in __init__
+    self._layer_summary = self.summarize()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/utilities/model_summary/model_summary.py", line 246, in summarize
+    self._forward_example_input()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/utilities/model_summary/model_summary.py", line 274, in _forward_example_input
+    model(*input_)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/myDir/rydberggpt/training/trainer.py", line 53, in forward
+    out = self.model.forward(m_onehot, cond)
+  File "/myDir/rydberggpt/models/transformer/models.py", line 50, in forward
+    return self.decode(tgt, self.encode(src))
+  File "/myDir/rydberggpt/models/transformer/models.py", line 75, in decode
+    return self.decoder(self.tgt_embed(tgt), memory)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1538, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/myDir/rydberggpt/models/transformer/models.py", line 140, in forward
+    x = layer(x, memory)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1538, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/myDir/rydberggpt/models/transformer/layers.py", line 52, in forward
+    x = self.sublayer[0](x, lambda x: self.self_attn(x, x, x, is_causal=True)[0])
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1538, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/myDir/rydberggpt/models/transformer/modules.py", line 35, in forward
+    return x + self.dropout(sublayer(self.layer_norm(x)))
+  File "/myDir/rydberggpt/models/transformer/layers.py", line 52, in <lambda>
+    x = self.sublayer[0](x, lambda x: self.self_attn(x, x, x, is_causal=True)[0])
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1538, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 1205, in forward
+    attn_output, attn_output_weights = F.multi_head_attention_forward(
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/functional.py", line 5176, in multi_head_attention_forward
+    raise RuntimeError(
+RuntimeError: Need attn_mask if specifying the is_causal hint. You may use the Transformer module method `generate_square_subsequent_mask` to create this mask.
+Exception ignored in: <function Profiler.__del__ at 0x2b21db46fb50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/profiler.py", line 145, in __del__
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/pytorch.py", line 528, in teardown
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/pytorch.py", line 513, in _delete_profilers
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/pytorch.py", line 505, in _cache_functions_events
+  File "/opt/conda/lib/python3.10/site-packages/torch/profiler/profiler.py", line 191, in events
+AssertionError: 
+
+# used apptainer gpu flag --nv
