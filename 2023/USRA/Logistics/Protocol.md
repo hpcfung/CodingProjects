@@ -159,3 +159,6 @@ pip install -e .
 remove .egg (but it comes back?)
 
 copy ryberggpt outside of src
+
+change `container/pytorch_recipe.def` `pytorch/pytorch:latest` to `pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime`  
+from https://hub.docker.com/layers/pytorch/pytorch/2.0.0-cuda11.7-cudnn8-runtime/images/sha256-fabb5a665a05b8ee0ac76f0d943acc40039e13536e11a44d3dc47625a266e759?context=explore
