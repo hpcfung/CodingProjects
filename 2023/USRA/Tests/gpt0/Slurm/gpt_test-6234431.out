@@ -1,0 +1,123 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig         4) imkl/2020.1.217    7) libfabric/1.10.1
+  2) gentoo/2020      5) intel/2020.1.217   8) openmpi/4.0.3
+  3) gcccore/.9.3.0   6) ucx/1.8.0          9) StdEnv/2020
+INFO:    underlay of /etc/localtime required more than 50 (68) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (206) bind mounts
+/opt/conda/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libtorch_cuda_cu.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/configuration_validator.py:70: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name      | Type                  | Params | In sizes | Out sizes
+---------------------------------------------------------------------------
+0 | model     | RydbergEncoderDecoder | 66.6 K | ?        | ?        
+1 | criterion | NLLLoss               | 0      | ?        | ?        
+---------------------------------------------------------------------------
+66.6 K    Trainable params
+0         Non-trainable params
+66.6 K    Total params
+0.266     Total estimated model params size (MB)
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:430: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 28 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+pytorch version: 2.0.1+cu117
+is cuda available: True
+cuda version: 11.7
+fix: yaml_path = /myDir/config/config_small.yaml
+device = cuda
+cuda device count = 1
+fix: data_path = /myDir/data
+fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Training: 0it [00:00, ?it/s]
+Training:   0%|          | 0/125 [00:00<?, ?it/s]
+Epoch 0:   0%|          | 0/125 [00:00<?, ?it/s] fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   1%|          | 1/125 [00:04<09:53,  4.79s/it]
+Epoch 0:   1%|          | 1/125 [00:04<09:54,  4.79s/it, v_num=1]STAGE:2023-05-09 22:58:58 15304:15304 ActivityProfilerController.cpp:311] Completed Stage: Warm Up
+fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   2%|▏         | 2/125 [00:08<08:37,  4.20s/it, v_num=1]
+Epoch 0:   2%|▏         | 2/125 [00:08<08:37,  4.20s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   2%|▏         | 3/125 [00:11<08:07,  4.00s/it, v_num=1]
+Epoch 0:   2%|▏         | 3/125 [00:11<08:07,  4.00s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   3%|▎         | 4/125 [00:15<07:50,  3.89s/it, v_num=1]
+Epoch 0:   3%|▎         | 4/125 [00:15<07:50,  3.89s/it, v_num=1]STAGE:2023-05-09 22:59:10 15304:15304 ActivityProfilerController.cpp:317] Completed Stage: Collection
+STAGE:2023-05-09 22:59:10 15304:15304 ActivityProfilerController.cpp:321] Completed Stage: Post Processing
+[W collection.cpp:496] Warning: [pl][profile][LightningModule]RydbergGPTTrainer.optimizer_step (function operator())
+fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   4%|▍         | 5/125 [00:21<08:45,  4.38s/it, v_num=1]
+Epoch 0:   4%|▍         | 5/125 [00:21<08:45,  4.38s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   5%|▍         | 6/125 [00:25<08:22,  4.22s/it, v_num=1]
+Epoch 0:   5%|▍         | 6/125 [00:25<08:22,  4.22s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   6%|▌         | 7/125 [00:28<08:07,  4.13s/it, v_num=1]
+Epoch 0:   6%|▌         | 7/125 [00:28<08:07,  4.13s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   6%|▋         | 8/125 [00:32<07:55,  4.06s/it, v_num=1]
+Epoch 0:   6%|▋         | 8/125 [00:32<07:55,  4.06s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   7%|▋         | 9/125 [00:36<07:55,  4.10s/it, v_num=1]
+Epoch 0:   7%|▋         | 9/125 [00:36<07:55,  4.10s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   8%|▊         | 10/125 [00:40<07:45,  4.05s/it, v_num=1]
+Epoch 0:   8%|▊         | 10/125 [00:40<07:45,  4.05s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:   9%|▉         | 11/125 [00:44<07:36,  4.00s/it, v_num=1]
+Epoch 0:   9%|▉         | 11/125 [00:44<07:36,  4.00s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:  10%|▉         | 12/125 [00:47<07:27,  3.96s/it, v_num=1]
+Epoch 0:  10%|▉         | 12/125 [00:47<07:27,  3.96s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:  10%|█         | 13/125 [00:51<07:20,  3.93s/it, v_num=1]
+Epoch 0:  10%|█         | 13/125 [00:51<07:20,  3.93s/it, v_num=1]fix: removed is_causal=True
+fix: removed is_causal=True
+fix: removed is_causal=True
+
+Epoch 0:  11%|█         | 14/125 [00:54<07:13,  3.91s/it, v_num=1]
+Epoch 0:  11%|█         | 14/125 [00:54<07:13,  3.91s/it, v_num=1]slurmstepd: error: *** JOB 6234431 ON gra1147 CANCELLED AT 2023-05-09T22:59:46 ***
+
+# restored devices=-1, "auto"
