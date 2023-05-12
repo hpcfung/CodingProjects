@@ -166,3 +166,10 @@ from https://hub.docker.com/layers/pytorch/pytorch/2.0.0-cuda11.7-cudnn8-runtime
 
 used `module load python/3.10` for tensorboard venv
 pip install --no-index tensorflow
+
+cd to scratch
+```
+module load python/3.10 scipy-stack
+source gpt_test/TENSORBOARD_ENV/bin/activate
+tensorboard --logdir="tensorboard_test/logs"
+```
