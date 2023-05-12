@@ -1,0 +1,199 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig         4) imkl/2020.1.217    7) libfabric/1.10.1
+  2) gentoo/2020      5) intel/2020.1.217   8) openmpi/4.0.3
+  3) gcccore/.9.3.0   6) ucx/1.8.0          9) StdEnv/2020
+INFO:    underlay of /etc/localtime required more than 50 (69) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (206) bind mounts
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/configuration_validator.py:70: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+Initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1]
+
+  | Name      | Type                  | Params | In sizes | Out sizes
+---------------------------------------------------------------------------
+0 | model     | RydbergEncoderDecoder | 66.6 K | ?        | ?        
+1 | criterion | NLLLoss               | 0      | ?        | ?        
+---------------------------------------------------------------------------
+66.6 K    Trainable params
+0         Non-trainable params
+66.6 K    Total params
+0.266     Total estimated model params size (MB)
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:430: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+pytorch version: 2.0.0
+is cuda available: True
+cuda version: 11.7
+fix: yaml_path = /myDir/config/config_small.yaml
+device = cuda
+cuda device count = 2
+fix: data_path = /myDir/data
+fix: log_path =/myDir/logs/lightning_logs/version_5
+set max_epochs=1
+
+Training: 0it [00:00, ?it/s]Swapping scheduler `CosineAnnealingWarmRestarts` for `SWALR`
+
+Training:   0%|          | 0/63 [00:00<?, ?it/s]
+Epoch 0:   0%|          | 0/63 [00:00<?, ?it/s] 
+Epoch 0:   2%|▏         | 1/63 [00:07<07:55,  7.67s/it]
+Epoch 0:   2%|▏         | 1/63 [00:07<07:55,  7.67s/it, v_num=5]STAGE:2023-05-11 18:41:10 37138:37138 ActivityProfilerController.cpp:311] Completed Stage: Warm Up
+STAGE:2023-05-11 18:41:10 37077:37077 ActivityProfilerController.cpp:311] Completed Stage: Warm Up
+
+Epoch 0:   3%|▎         | 2/63 [00:13<06:48,  6.70s/it, v_num=5]
+Epoch 0:   3%|▎         | 2/63 [00:13<06:48,  6.70s/it, v_num=5]
+Epoch 0:   5%|▍         | 3/63 [00:19<06:22,  6.38s/it, v_num=5]
+Epoch 0:   5%|▍         | 3/63 [00:19<06:22,  6.38s/it, v_num=5]
+Epoch 0:   6%|▋         | 4/63 [00:24<06:05,  6.19s/it, v_num=5]
+Epoch 0:   6%|▋         | 4/63 [00:24<06:05,  6.19s/it, v_num=5]STAGE:2023-05-11 18:41:29 37077:37077 ActivityProfilerController.cpp:317] Completed Stage: Collection
+STAGE:2023-05-11 18:41:29 37077:37077 ActivityProfilerController.cpp:321] Completed Stage: Post Processing
+STAGE:2023-05-11 18:41:29 37138:37138 ActivityProfilerController.cpp:317] Completed Stage: Collection
+STAGE:2023-05-11 18:41:29 37138:37138 ActivityProfilerController.cpp:321] Completed Stage: Post Processing
+[W collection.cpp:496] Warning: [pl][profile][LightningModule]RydbergGPTTrainer.optimizer_step (function operator())
+[W collection.cpp:496] Warning: [pl][profile][LightningModule]RydbergGPTTrainer.optimizer_step (function operator())
+
+Epoch 0:   8%|▊         | 5/63 [00:35<06:54,  7.15s/it, v_num=5]
+Epoch 0:   8%|▊         | 5/63 [00:35<06:54,  7.15s/it, v_num=5]
+Epoch 0:  10%|▉         | 6/63 [00:41<06:31,  6.87s/it, v_num=5]
+Epoch 0:  10%|▉         | 6/63 [00:41<06:31,  6.87s/it, v_num=5]
+Epoch 0:  11%|█         | 7/63 [00:46<06:14,  6.69s/it, v_num=5]
+Epoch 0:  11%|█         | 7/63 [00:46<06:14,  6.69s/it, v_num=5]
+Epoch 0:  13%|█▎        | 8/63 [00:53<06:10,  6.73s/it, v_num=5]
+Epoch 0:  13%|█▎        | 8/63 [00:53<06:10,  6.73s/it, v_num=5]
+Epoch 0:  14%|█▍        | 9/63 [00:59<05:56,  6.61s/it, v_num=5]
+Epoch 0:  14%|█▍        | 9/63 [00:59<05:56,  6.61s/it, v_num=5]
+Epoch 0:  16%|█▌        | 10/63 [01:05<05:45,  6.51s/it, v_num=5]
+Epoch 0:  16%|█▌        | 10/63 [01:05<05:45,  6.51s/it, v_num=5]
+Epoch 0:  17%|█▋        | 11/63 [01:10<05:34,  6.44s/it, v_num=5]
+Epoch 0:  17%|█▋        | 11/63 [01:10<05:34,  6.44s/it, v_num=5]
+Epoch 0:  19%|█▉        | 12/63 [01:16<05:24,  6.37s/it, v_num=5]
+Epoch 0:  19%|█▉        | 12/63 [01:16<05:24,  6.37s/it, v_num=5]
+Epoch 0:  21%|██        | 13/63 [01:22<05:15,  6.31s/it, v_num=5]
+Epoch 0:  21%|██        | 13/63 [01:22<05:15,  6.31s/it, v_num=5]
+Epoch 0:  22%|██▏       | 14/63 [01:27<05:07,  6.27s/it, v_num=5]
+Epoch 0:  22%|██▏       | 14/63 [01:27<05:07,  6.27s/it, v_num=5]
+Epoch 0:  24%|██▍       | 15/63 [01:38<05:14,  6.54s/it, v_num=5]
+Epoch 0:  24%|██▍       | 15/63 [01:38<05:14,  6.54s/it, v_num=5]
+Epoch 0:  25%|██▌       | 16/63 [01:43<05:04,  6.47s/it, v_num=5]
+Epoch 0:  25%|██▌       | 16/63 [01:43<05:04,  6.47s/it, v_num=5]
+Epoch 0:  27%|██▋       | 17/63 [01:49<04:55,  6.43s/it, v_num=5]
+Epoch 0:  27%|██▋       | 17/63 [01:49<04:55,  6.43s/it, v_num=5]
+Epoch 0:  29%|██▊       | 18/63 [01:54<04:47,  6.38s/it, v_num=5]
+Epoch 0:  29%|██▊       | 18/63 [01:54<04:47,  6.38s/it, v_num=5]
+Epoch 0:  30%|███       | 19/63 [02:00<04:38,  6.34s/it, v_num=5]
+Epoch 0:  30%|███       | 19/63 [02:00<04:38,  6.34s/it, v_num=5]
+Epoch 0:  32%|███▏      | 20/63 [02:06<04:31,  6.31s/it, v_num=5]
+Epoch 0:  32%|███▏      | 20/63 [02:06<04:31,  6.31s/it, v_num=5]
+Epoch 0:  33%|███▎      | 21/63 [02:11<04:23,  6.27s/it, v_num=5]
+Epoch 0:  33%|███▎      | 21/63 [02:11<04:23,  6.27s/it, v_num=5]
+Epoch 0:  35%|███▍      | 22/63 [02:21<04:23,  6.43s/it, v_num=5]
+Epoch 0:  35%|███▍      | 22/63 [02:21<04:23,  6.43s/it, v_num=5]
+Epoch 0:  37%|███▋      | 23/63 [02:26<04:15,  6.39s/it, v_num=5]
+Epoch 0:  37%|███▋      | 23/63 [02:26<04:15,  6.39s/it, v_num=5]
+Epoch 0:  38%|███▊      | 24/63 [02:32<04:07,  6.35s/it, v_num=5]
+Epoch 0:  38%|███▊      | 24/63 [02:32<04:07,  6.35s/it, v_num=5]
+Epoch 0:  40%|███▉      | 25/63 [02:38<04:00,  6.32s/it, v_num=5]
+Epoch 0:  40%|███▉      | 25/63 [02:38<04:00,  6.32s/it, v_num=5]
+Epoch 0:  41%|████▏     | 26/63 [02:43<03:52,  6.29s/it, v_num=5]
+Epoch 0:  41%|████▏     | 26/63 [02:43<03:52,  6.29s/it, v_num=5]
+Epoch 0:  43%|████▎     | 27/63 [02:49<03:45,  6.27s/it, v_num=5]
+Epoch 0:  43%|████▎     | 27/63 [02:49<03:45,  6.27s/it, v_num=5]
+Epoch 0:  44%|████▍     | 28/63 [02:54<03:38,  6.25s/it, v_num=5]
+Epoch 0:  44%|████▍     | 28/63 [02:54<03:38,  6.25s/it, v_num=5]
+Epoch 0:  46%|████▌     | 29/63 [03:00<03:31,  6.23s/it, v_num=5]
+Epoch 0:  46%|████▌     | 29/63 [03:00<03:31,  6.23s/it, v_num=5]
+Epoch 0:  48%|████▊     | 30/63 [03:10<03:29,  6.35s/it, v_num=5]
+Epoch 0:  48%|████▊     | 30/63 [03:10<03:29,  6.35s/it, v_num=5]
+Epoch 0:  49%|████▉     | 31/63 [03:15<03:22,  6.32s/it, v_num=5]
+Epoch 0:  49%|████▉     | 31/63 [03:15<03:22,  6.32s/it, v_num=5]
+Epoch 0:  51%|█████     | 32/63 [03:21<03:15,  6.29s/it, v_num=5]
+Epoch 0:  51%|█████     | 32/63 [03:21<03:15,  6.29s/it, v_num=5]
+Epoch 0:  52%|█████▏    | 33/63 [03:26<03:08,  6.27s/it, v_num=5]
+Epoch 0:  52%|█████▏    | 33/63 [03:26<03:08,  6.27s/it, v_num=5]
+Epoch 0:  54%|█████▍    | 34/63 [03:32<03:01,  6.24s/it, v_num=5]
+Epoch 0:  54%|█████▍    | 34/63 [03:32<03:01,  6.24s/it, v_num=5]
+Epoch 0:  56%|█████▌    | 35/63 [03:37<02:54,  6.22s/it, v_num=5]
+Epoch 0:  56%|█████▌    | 35/63 [03:37<02:54,  6.22s/it, v_num=5]
+Epoch 0:  57%|█████▋    | 36/63 [03:43<02:47,  6.20s/it, v_num=5]
+Epoch 0:  57%|█████▋    | 36/63 [03:43<02:47,  6.20s/it, v_num=5]
+Epoch 0:  59%|█████▊    | 37/63 [03:53<02:43,  6.30s/it, v_num=5]
+Epoch 0:  59%|█████▊    | 37/63 [03:53<02:43,  6.30s/it, v_num=5]
+Epoch 0:  60%|██████    | 38/63 [03:58<02:36,  6.28s/it, v_num=5]
+Epoch 0:  60%|██████    | 38/63 [03:58<02:36,  6.28s/it, v_num=5]
+Epoch 0:  62%|██████▏   | 39/63 [04:03<02:30,  6.25s/it, v_num=5]
+Epoch 0:  62%|██████▏   | 39/63 [04:03<02:30,  6.25s/it, v_num=5]
+Epoch 0:  63%|██████▎   | 40/63 [04:09<02:23,  6.23s/it, v_num=5]
+Epoch 0:  63%|██████▎   | 40/63 [04:09<02:23,  6.23s/it, v_num=5]
+Epoch 0:  65%|██████▌   | 41/63 [04:14<02:16,  6.21s/it, v_num=5]
+Epoch 0:  65%|██████▌   | 41/63 [04:14<02:16,  6.21s/it, v_num=5]
+Epoch 0:  67%|██████▋   | 42/63 [04:20<02:10,  6.20s/it, v_num=5]
+Epoch 0:  67%|██████▋   | 42/63 [04:20<02:10,  6.20s/it, v_num=5]
+Epoch 0:  68%|██████▊   | 43/63 [04:25<02:03,  6.18s/it, v_num=5]
+Epoch 0:  68%|██████▊   | 43/63 [04:25<02:03,  6.18s/it, v_num=5]
+Epoch 0:  70%|██████▉   | 44/63 [04:35<01:58,  6.26s/it, v_num=5]
+Epoch 0:  70%|██████▉   | 44/63 [04:35<01:58,  6.26s/it, v_num=5]
+Epoch 0:  71%|███████▏  | 45/63 [04:45<01:54,  6.33s/it, v_num=5]
+Epoch 0:  71%|███████▏  | 45/63 [04:45<01:54,  6.33s/it, v_num=5]
+Epoch 0:  73%|███████▎  | 46/63 [04:50<01:47,  6.31s/it, v_num=5]
+Epoch 0:  73%|███████▎  | 46/63 [04:50<01:47,  6.31s/it, v_num=5]
+Epoch 0:  75%|███████▍  | 47/63 [04:55<01:40,  6.30s/it, v_num=5]
+Epoch 0:  75%|███████▍  | 47/63 [04:55<01:40,  6.30s/it, v_num=5]
+Epoch 0:  76%|███████▌  | 48/63 [05:01<01:34,  6.28s/it, v_num=5]
+Epoch 0:  76%|███████▌  | 48/63 [05:01<01:34,  6.28s/it, v_num=5]
+Epoch 0:  78%|███████▊  | 49/63 [05:06<01:27,  6.26s/it, v_num=5]
+Epoch 0:  78%|███████▊  | 49/63 [05:06<01:27,  6.26s/it, v_num=5]
+Epoch 0:  79%|███████▉  | 50/63 [05:13<01:21,  6.27s/it, v_num=5]
+Epoch 0:  79%|███████▉  | 50/63 [05:13<01:21,  6.27s/it, v_num=5]
+Epoch 0:  81%|████████  | 51/63 [05:22<01:15,  6.32s/it, v_num=5]
+Epoch 0:  81%|████████  | 51/63 [05:22<01:15,  6.32s/it, v_num=5]
+Epoch 0:  83%|████████▎ | 52/63 [05:31<01:10,  6.38s/it, v_num=5]
+Epoch 0:  83%|████████▎ | 52/63 [05:31<01:10,  6.38s/it, v_num=5]
+Epoch 0:  84%|████████▍ | 53/63 [05:37<01:03,  6.36s/it, v_num=5]
+Epoch 0:  84%|████████▍ | 53/63 [05:37<01:03,  6.36s/it, v_num=5]
+Epoch 0:  86%|████████▌ | 54/63 [05:42<00:57,  6.35s/it, v_num=5]
+Epoch 0:  86%|████████▌ | 54/63 [05:42<00:57,  6.35s/it, v_num=5]
+Epoch 0:  87%|████████▋ | 55/63 [05:48<00:50,  6.33s/it, v_num=5]
+Epoch 0:  87%|████████▋ | 55/63 [05:48<00:50,  6.33s/it, v_num=5]
+Epoch 0:  89%|████████▉ | 56/63 [05:53<00:44,  6.32s/it, v_num=5]
+Epoch 0:  89%|████████▉ | 56/63 [05:53<00:44,  6.32s/it, v_num=5]
+Epoch 0:  90%|█████████ | 57/63 [05:59<00:37,  6.30s/it, v_num=5]
+Epoch 0:  90%|█████████ | 57/63 [05:59<00:37,  6.30s/it, v_num=5]
+Epoch 0:  92%|█████████▏| 58/63 [06:04<00:31,  6.29s/it, v_num=5]
+Epoch 0:  92%|█████████▏| 58/63 [06:04<00:31,  6.29s/it, v_num=5]
+Epoch 0:  94%|█████████▎| 59/63 [06:14<00:25,  6.35s/it, v_num=5]
+Epoch 0:  94%|█████████▎| 59/63 [06:14<00:25,  6.35s/it, v_num=5]
+Epoch 0:  95%|█████████▌| 60/63 [06:20<00:19,  6.33s/it, v_num=5]
+Epoch 0:  95%|█████████▌| 60/63 [06:20<00:19,  6.33s/it, v_num=5]
+Epoch 0:  97%|█████████▋| 61/63 [06:25<00:12,  6.32s/it, v_num=5]
+Epoch 0:  97%|█████████▋| 61/63 [06:25<00:12,  6.32s/it, v_num=5]
+Epoch 0:  98%|█████████▊| 62/63 [06:31<00:06,  6.31s/it, v_num=5]
+Epoch 0:  98%|█████████▊| 62/63 [06:31<00:06,  6.31s/it, v_num=5]
+Epoch 0: 100%|██████████| 63/63 [06:33<00:00,  6.25s/it, v_num=5]
+Epoch 0: 100%|██████████| 63/63 [06:33<00:00,  6.25s/it, v_num=5]
+Epoch 0: 100%|██████████| 63/63 [06:33<00:00,  6.25s/it, v_num=5]`Trainer.fit` stopped: `max_epochs=1` reached.
+
+Epoch 0: 100%|██████████| 63/63 [06:33<00:00,  6.25s/it, v_num=5]pytorch version: 2.0.0
+is cuda available: True
+cuda version: 11.7
+fix: yaml_path = /myDir/config/config_small.yaml
+device = cuda
+cuda device count = 2
+fix: data_path = /myDir/data
+fix: log_path =/myDir/logs/lightning_logs/version_5
+set max_epochs=1
+
+python program completed
+
+# trained on double gpu
