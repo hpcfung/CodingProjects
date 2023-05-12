@@ -1,0 +1,116 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig         4) imkl/2020.1.217    7) libfabric/1.10.1
+  2) gentoo/2020      5) intel/2020.1.217   8) openmpi/4.0.3
+  3) gcccore/.9.3.0   6) ucx/1.8.0          9) StdEnv/2020
+INFO:    underlay of /etc/localtime required more than 50 (69) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (206) bind mounts
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/configuration_validator.py:70: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name      | Type                  | Params | In sizes | Out sizes
+---------------------------------------------------------------------------
+0 | model     | RydbergEncoderDecoder | 66.6 K | ?        | ?        
+1 | criterion | NLLLoss               | 0      | ?        | ?        
+---------------------------------------------------------------------------
+66.6 K    Trainable params
+0         Non-trainable params
+66.6 K    Total params
+0.266     Total estimated model params size (MB)
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:430: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+pytorch version: 2.0.0
+is cuda available: True
+cuda version: 11.7
+fix: yaml_path = /myDir/config/config_small.yaml
+device = cuda
+cuda device count = 1
+fix: data_path = /myDir/data
+fix: log_path =/myDir/logs/lightning_logs/version_8
+set max_epochs=1
+
+Training: 0it [00:00, ?it/s]Swapping scheduler `CosineAnnealingWarmRestarts` for `SWALR`
+
+Training:   0%|          | 0/125 [00:00<?, ?it/s]
+Epoch 0:   0%|          | 0/125 [00:00<?, ?it/s] fix: self.log NLLLoss
+Traceback (most recent call last):
+  File "/myDir/myTrain.py", line 141, in <module>
+    main(config_path=yaml_path, config_name=config_name)
+  File "/myDir/myTrain.py", line 112, in main
+    trainer.fit(rydberg_gpt_trainer, train_loader, val_loader)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 978, in _run_stage
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 201, in run
+    self.advance()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 354, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 218, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 185, in run
+    self._optimizer_step(kwargs.get("batch_idx", 0), closure)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 261, in _optimizer_step
+    call._call_lightning_module_hook(
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 142, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/core/module.py", line 1265, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/core/optimizer.py", line 158, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 224, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/plugins/precision/amp.py", line 70, in optimizer_step
+    closure_result = closure()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 140, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 126, in closure
+    step_output = self._step_fn()
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 308, in _training_step
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 288, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 366, in training_step
+    return self.model.training_step(*args, **kwargs)
+  File "/myDir/rydberggpt/training/trainer.py", line 69, in training_step
+    loss = self.criterion(cond_log_probs, batch.m_onehot)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1538, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/myDir/rydberggpt/training/loss.py", line 42, in forward
+    self.log("train_loss", loss)
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/core/module.py", line 429, in log
+    raise MisconfigurationException(
+lightning_fabric.utilities.exceptions.MisconfigurationException: You are trying to `self.log()` but it is not managed by the `Trainer` control flow
+STAGE:2023-05-12 00:58:58 31723:31723 ActivityProfilerController.cpp:311] Completed Stage: Warm Up
+Exception ignored in: <function Profiler.__del__ at 0x2b0839016200>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/profiler.py", line 145, in __del__
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/pytorch.py", line 528, in teardown
+  File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/profilers/pytorch.py", line 512, in _delete_profilers
+  File "/opt/conda/lib/python3.10/site-packages/torch/profiler/profiler.py", line 509, in __exit__
+  File "/opt/conda/lib/python3.10/site-packages/torch/profiler/profiler.py", line 521, in stop
+  File "/opt/conda/lib/python3.10/site-packages/torch/profiler/profiler.py", line 549, in _transit_action
+  File "/opt/conda/lib/python3.10/site-packages/torch/profiler/profiler.py", line 133, in start_trace
+  File "/opt/conda/lib/python3.10/site-packages/torch/profiler/profiler.py", line 210, in _get_distributed_info
+ImportError: sys.meta_path is None, Python is likely shutting down
+
+Epoch 0:   0%|          | 0/125 [00:04<?, ?it/s]
+[W observer.cpp:102] Warning: Leaked callback handle: 1 (function operator())
+python program completed
+
+# added self.log to NLLLoss
