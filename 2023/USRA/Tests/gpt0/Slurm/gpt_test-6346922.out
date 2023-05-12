@@ -1,0 +1,28 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig         4) imkl/2020.1.217    7) libfabric/1.10.1
+  2) gentoo/2020      5) intel/2020.1.217   8) openmpi/4.0.3
+  3) gcccore/.9.3.0   6) ucx/1.8.0          9) StdEnv/2020
+INFO:    underlay of /etc/localtime required more than 50 (69) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (206) bind mounts
+pytorch version: 2.0.0
+is cuda available: True
+cuda version: 11.7
+fix: yaml_path = /myDir/config/config_small.yaml
+device = cuda
+cuda device count = 1
+fix: data_path = /myDir/data
+fix: log_path =/myDir/logs/lightning_logs/version_9
+fix: log_every_n_steps=1
+Traceback (most recent call last):
+  File "/myDir/myTrain.py", line 143, in <module>
+    main(config_path=yaml_path, config_name=config_name)
+  File "/myDir/myTrain.py", line 63, in main
+    rydberg_gpt_trainer = RydbergGPTTrainer(
+TypeError: RydbergGPTTrainer.__init__() got an unexpected keyword argument 'log_every_n_steps'
+python program completed
+
+# added log_every_n_steps=1 to rydberg_gpt_trainer = RydbergGPTTrainer()
+# wrong place to add
+# not to model, but to pl.trainer
