@@ -173,3 +173,7 @@ module load python/3.10 scipy-stack
 source gpt_test/TENSORBOARD_ENV/bin/activate
 tensorboard --logdir="tensorboard_test/logs"
 ```
+to look at one version only
+```
+tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
+```
