@@ -177,3 +177,4 @@ to look at one version only
 ```
 tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
 ```
+(sometimes `port 6006` occupied)
