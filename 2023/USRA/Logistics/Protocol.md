@@ -191,3 +191,57 @@ tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
 git clone https://github.com/PIQuIL/RydbergGPT.git
 ```
 This step creates the `RydbergGPT` directory in your home directory.
+
+### Container
+```
+cd RydbergGPT/container
+apptainer build pytorch.sif pytorch_recipe.def
+```
+```
+Please select a module to run apptainer:
+       MODULE          PARENT(S)
+    1  apptainer/1.1.6 StdEnv/2020
+    2  apptainer/1.1.5 StdEnv/2020
+    3  apptainer/1.1.3 StdEnv/2020
+Make a selection (1-3, q aborts) [1]: 1 # latest version
+```
+### Data
+Put the `data` folder inside `RydbergGPT` (after unzippinng)(`dat`a should contain 4 sub folders) 
+###
+
+```
+module load python/3.10
+pip freeze # check that rydberggpt is not already installed
+```
+Go to `setup.cfg`, comment out the pacakages below `install_requires`:
+```
+    torch>=2.0.0
+    torchvision
+    torchaudio
+    torch_geometric
+    pennylane>=0.29
+    numpy>=1.23
+    tensorboard>=2.12
+    matplotlib
+    tqdm
+    black
+    pandas
+    joblib
+    seaborn
+    imageio
+    pytorch-lightning
+    # tensorboard-plugin-profile
+    torch-tb-profiler
+    torchsummary
+    h5py
+    tables
+    pytest
+    deepspeed
+    torch_geometric
+```    
+Go to the RydbergGPT directory, run
+```
+pip install -e .
+```
+
+
