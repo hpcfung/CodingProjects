@@ -207,12 +207,13 @@ Make a selection (1-3, q aborts) [1]: 1 # latest version
 ```
 ### Data
 Put the `data` folder inside `RydbergGPT` (after unzippinng)(`dat`a should contain 4 sub folders) 
-###
 
+### Install `rydberggpt`
 ```
 module load python/3.10
-pip freeze # check that rydberggpt is not already installed
 ```
+`pip freeze` to check that rydberggpt is not already installed.  
+
 Go to `setup.cfg`, comment out the pacakages below `install_requires`:
 ```
     torch>=2.0.0
@@ -243,5 +244,67 @@ Go to the RydbergGPT directory, run
 ```
 pip install -e .
 ```
+`pip freeze` to check that rydberggpt is installed.
+```
+-e git+https://github.com/PIQuIL/RydbergGPT.git@aabb59035b7e8c4713a14131697ae0b31ff11f8c#egg=rydberggpt
+```
 
+### Run on Slurm
+Use this script
+```
+#!/bin/bash
+#SBATCH --time=00:10:00
+#SBATCH --job-name=gpt_test
+#SBATCH --mem=16G
+#SBATCH --gpus-per-node=v100:1
+#SBATCH --output=gpt_test-%J.out
+#SBATCH --account=def-rgmelko
+
+module purge
+
+module load StdEnv/2020 apptainer/1.1.6
+
+# Declare the Python script name as a variable
+python_script_name="train.py"
+# python_script_name="examples/3_train_encoder_decoder.py"
+
+# cd to RydbergGPT dir
+# sbatch scripts/myTrain.sh
+# source scripts/myTrain.sh
+apptainer exec --nv ~/RydbergGPT/container/pytorch.sif python ~/RydbergGPT/${python_script_name} --config_name=config_small
+
+echo 'python program completed'
+```
+This generates a `logs/lightning_logs` directory and a `.out` file inside the `RydbergGPT` directory.  
+
+Changes from `train.sh` in the repo:
+- added `--nv` flag for gpu access
+
+By default, this runs for 1000 epochs?
+
+### Tensorboard
+#### Set up venv
+Go to the `RydbergGPT` directory
+```
+module load python/3.10
+virtualenv --no-download TENSORBOARD_ENV
+source TENSORBOARD_ENV/bin/activate
+pip install --no-index --upgrade pip
+pip install --no-index tensorflow
+deactivate
+```
+#### View tensorboard
+Go to the `RydbergGPT` directory
+```
+module load python/3.10
+source TENSORBOARD_ENV/bin/activate
+tensorboard --logdir="logs"
+```
+To look at one version only, use
+```
+tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
+```
+Use `--port=8008` flag if `port 6006` is occupied.  
+
+`CTRL+C` then deactivate.
 
