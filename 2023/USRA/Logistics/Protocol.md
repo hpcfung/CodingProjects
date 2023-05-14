@@ -178,3 +178,16 @@ to look at one version only
 tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
 ```
 (sometimes `port 6006` occupied)
+
+## RydbergGPT on Graham
+
+(Quality of life: set up VS remote)
+
+### Git clone
+1. Go to home directory on Graham
+2. Go to https://github.com/PIQuIL/RydbergGPT/tree/main; <> Code button, HTTPS, copy link
+3. 
+```
+git clone https://github.com/PIQuIL/RydbergGPT.git
+```
+This step creates the `RydbergGPT` directory in your home directory.
