@@ -214,12 +214,17 @@ Make a selection (1-3, q aborts) [1]: 1 # latest version
 Put the `data` folder inside `RydbergGPT` (after unzippinng)(`dat`a should contain 4 sub folders) 
 
 ### Install `rydberggpt`
+1.
 ```
 module load python/3.10
 ```
-`pip freeze` to check that rydberggpt is not already installed.  
-
-Go to `setup.cfg`, comment out the pacakages below `install_requires`:
+2. `pip freeze` to check that rydberggpt is not already installed. 
+3. If already installed (eg another branch), do
+```
+python -m pip uninstall rydberggpt
+```
+Then `pip freeze` to check again
+5. Go to `setup.cfg`, comment out the pacakages below `install_requires`:
 ```
     torch>=2.0.0
     torchvision
@@ -245,11 +250,11 @@ Go to `setup.cfg`, comment out the pacakages below `install_requires`:
     deepspeed
     torch_geometric
 ```    
-Go to the RydbergGPT directory, run
+6. Go to the `RydbergGPT` directory, run
 ```
 pip install -e .
 ```
-`pip freeze` to check that rydberggpt is installed.
+7. `pip freeze` to check that rydberggpt is installed. You should see
 ```
 -e git+https://github.com/PIQuIL/RydbergGPT.git@aabb59035b7e8c4713a14131697ae0b31ff11f8c#egg=rydberggpt
 ```
