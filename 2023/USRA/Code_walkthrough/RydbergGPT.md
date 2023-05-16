@@ -2,11 +2,7 @@ most info in `config/.yaml` file
 `dataset`: so many `null`?  
 how does graph embedding work?
 
-```
-yaml_path = f"config/"
-main(config_path=yaml_path, config_name=config_name)
-def main(config_path: str, config_name: str):
-```
+
 
 training data format  
 eg `data/delta_-1_545`
@@ -19,3 +15,31 @@ graph.json
 weight source target? where do the weights come from?
 
 figure out what dataloader does?
+
+key = pytorch lightning
+```
+class LitMLP(pl.LightningModule):
+    def __init__(self, model):
+        super().__init__()
+        self.model = model
+
+    def training_step(self, batch, batch_idx):
+        X, y = batch
+        pred = self.model(X)
+        loss = nn.functional.mse_loss(pred, y)
+
+        self.log("train_loss", loss)
+        return loss
+
+    def configure_optimizers(self):
+        optimizer = T.optim.Adam(self.parameters(), lr=learning_rate)
+        return optimizer
+```
+instead of manual training loop with eg `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, we have `def training_step():`. Note that is extension of `pl.LightningModule`.
+
+## L4
+```
+yaml_path = f"config/"
+main(config_path=yaml_path, config_name=config_name)
+def main(config_path: str, config_name: str):
+```
