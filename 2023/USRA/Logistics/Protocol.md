@@ -190,7 +190,7 @@ tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
 ```
 git clone https://github.com/PIQuIL/RydbergGPT.git
 ```
-Or
+Or (probably should cd to a separate directory for that branch first)
 ```
 git clone -b yihongdev https://github.com/PIQuIL/RydbergGPT.git
 ```
