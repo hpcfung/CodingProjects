@@ -190,6 +190,10 @@ tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
 ```
 git clone https://github.com/PIQuIL/RydbergGPT.git
 ```
+Or
+```
+git clone -b yihongdev https://github.com/PIQuIL/RydbergGPT.git
+```
 This step creates the `RydbergGPT` directory in your home directory.
 
 ### Container
