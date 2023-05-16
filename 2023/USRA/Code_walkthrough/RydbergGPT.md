@@ -37,6 +37,19 @@ class LitMLP(pl.LightningModule):
 ```
 instead of manual training loop with eg `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, we have `def training_step():`. Note that is extension of `pl.LightningModule`.
 
+Also, instead of defining the model as a class with `def __init__():` and `def forward():`, usually define model as an instance
+```
+model = nn.Sequential(
+        nn.Linear(1, hidden_layer_width1),
+        nn.ReLU(),
+        nn.Linear(hidden_layer_width1, hidden_layer_width2),
+        nn.ReLU(),
+        nn.Linear(hidden_layer_width2, 1),
+    )
+    
+MLP = LitMLP(model)
+```
+
 ## L4
 ```
 yaml_path = f"config/"
