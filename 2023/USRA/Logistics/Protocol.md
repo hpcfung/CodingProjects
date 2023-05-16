@@ -209,6 +209,7 @@ Please select a module to run apptainer:
     3  apptainer/1.1.3 StdEnv/2020
 Make a selection (1-3, q aborts) [1]: 1 # latest version
 ```
+(`yihongdev` branch uses `apptainer/1.1.8 StdEnv/2020`)
 ### Data
 Put the `data` folder inside `RydbergGPT` (after unzippinng)(`dat`a should contain 4 sub folders) 
 
