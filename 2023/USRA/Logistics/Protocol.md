@@ -137,5 +137,5 @@ tensorboard --logdir="logs/lightning_logs/version_10" --port=8008
 ```
 Use `--port=8008` flag if `port 6006` is occupied.  
 
-`CTRL+C` then deactivate.
+`CTRL+C` then `deactivate`.
 
