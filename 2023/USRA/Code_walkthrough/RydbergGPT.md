@@ -50,9 +50,28 @@ model = nn.Sequential(
 MLP = LitMLP(model)
 ```
 
+### Architecture
+See docstring for `class RydbergEncoderDecoder(EncoderDecoder):` in `rydberggpt/models/rydberg_encoder_decoder.py`
+
 ## L4
 ```
 yaml_path = f"config/"
 main(config_path=yaml_path, config_name=config_name)
 def main(config_path: str, config_name: str):
+```
+
+### model
+```
+model = get_rydberg_graph_encoder_decoder(config) # train.py
+from rydberggpt.models.rydberg_encoder_decoder import get_rydberg_graph_encoder_decoder
+def get_rydberg_graph_encoder_decoder(config): # rydberggpt/models/rydberg_encoder_decoder.py
+model = RydbergEncoderDecoder(
+        encoder=Encoder(),
+        decoder=Decoder(),
+        src_embed=GraphEmbedding(),
+        tgt_embed=nn.Sequential(),
+        generator=Generator(),
+        config=config,
+) # afterwards: Xavier uniform initialization
+class RydbergEncoderDecoder(EncoderDecoder):
 ```
