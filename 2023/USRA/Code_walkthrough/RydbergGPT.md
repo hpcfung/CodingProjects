@@ -49,7 +49,10 @@ model = nn.Sequential(
     
 MLP = LitMLP(model)
 ```
-
+is `forward` method necessary? doesn't show up above, which is from  
+https://lightning.ai/docs/pytorch/stable/starter/introduction.html#define-a-lightningmodule  
+but shows up here?  
+https://lightning.ai/docs/pytorch/stable/common/lightning_module.html#starter-example
 ### Architecture
 See docstring for `class RydbergEncoderDecoder(EncoderDecoder):` in `rydberggpt/models/rydberg_encoder_decoder.py`
 
