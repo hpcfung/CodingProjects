@@ -75,3 +75,9 @@ model = RydbergEncoderDecoder(
 ) # afterwards: Xavier uniform initialization
 class RydbergEncoderDecoder(EncoderDecoder):
 ```
+pass reference to class instance: only runs `def __init__():`  
+so `RydbergEncoderDecoder` basically wrapper for `def __init__():` in `EncoderDecoder`  
+`EncoderDecoder` subclass of `pl.LightningModule`; makes sense, necessary for pytorch lightning models
+```
+class EncoderDecoder(pl.LightningModule): # rydberggpt/models/transformer/models.py
+```
