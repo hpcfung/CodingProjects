@@ -81,3 +81,7 @@ so `RydbergEncoderDecoder` basically wrapper for `def __init__():` in `EncoderDe
 ```
 class EncoderDecoder(pl.LightningModule): # rydberggpt/models/transformer/models.py
 ```
+
+https://docs.python.org/3/library/functions.html#super
+`super().method(arg)` does the same thing as `super(C, self).method(arg)`
+https://stackoverflow.com/questions/14743787/python-superclass-self-method-vs-superparent-self-method
