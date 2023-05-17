@@ -78,6 +78,7 @@ pip install -e .
 ```
 -e git+https://github.com/PIQuIL/RydbergGPT.git@aabb59035b7e8c4713a14131697ae0b31ff11f8c#egg=rydberggpt
 ```
+between packages that start with `q` and `s`.
 
 ### Run on Slurm
 Use this script
