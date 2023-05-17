@@ -83,5 +83,10 @@ class EncoderDecoder(pl.LightningModule): # rydberggpt/models/transformer/models
 ```
 
 https://docs.python.org/3/library/functions.html#super
-`super().method(arg)` does the same thing as `super(C, self).method(arg)`
+```
+class C(B):
+    def method(self, arg):
+        super().method(arg)
+```
+does the same thing as `super(C, self).method(arg)`  
 https://stackoverflow.com/questions/14743787/python-superclass-self-method-vs-superparent-self-method
