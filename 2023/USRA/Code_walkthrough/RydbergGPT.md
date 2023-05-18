@@ -37,6 +37,11 @@ class LitMLP(pl.LightningModule):
 ```
 instead of manual training loop with eg `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, we have `def training_step():`. Note that is extension of `pl.LightningModule`.
 
+Training is just a one-liner
+```
+trainer.fit(model=MLP, train_dataloaders=train_dataloader, val_dataloaders=test_dataloader)
+```
+
 Also, instead of defining the model as a class with `def __init__():` and `def forward():`, usually define model as an instance
 ```
 model = nn.Sequential(
@@ -93,3 +98,22 @@ class C(B):
 ```
 does the same thing as `super(C, self).method(arg)`  
 https://stackoverflow.com/questions/14743787/python-superclass-self-method-vs-superparent-self-method
+
+note `class EncoderDecoder(pl.LightningModule):` no `training_step()` method, only `forward`, `encode`, `decode`
+
+```
+trainer.fit(rydberg_gpt_trainer, train_loader, val_loader)
+rydberg_gpt_trainer = RydbergGPTTrainer()
+from rydberggpt.training.trainer import RydbergGPTTrainer
+class RydbergGPTTrainer(pl.LightningModule): # rydberggpt/training/trainer.py
+```
+`forward` is basically a wrapper for `class EncoderDecoder(pl.LightningModule):`
+```
+out = self.model.forward(m_onehot, cond)
+cond_log_probs = self.model.generator(out)
+return cond_log_probs
+```
+note that `model.forward` followed by `model.generator`  
+so technically `trainer.fit(model=rydberg_gpt_trainer, train_loader, val_loader)`  
+So the model is implemented as two different `pl.LightningModule` classes. `EncoderDecoder` is pure model architecture, `RydbergGPTTrainer` is combined model plus training step.
+
