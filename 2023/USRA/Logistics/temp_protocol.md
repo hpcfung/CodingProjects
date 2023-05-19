@@ -1,4 +1,4 @@
-Julia: add to path
+Julia: local installation, add to path
 
 ## Graham
 
