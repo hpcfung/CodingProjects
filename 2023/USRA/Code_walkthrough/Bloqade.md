@@ -1,4 +1,8 @@
 
+## QMC script
+`thermalstate(parsed_args["thermal"])` goes from main to functions  
+which calls `init_mc_cli(parsed_args)` at the beginning
+
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
 `AbstractLattice{D}` implemented as abstract type  
