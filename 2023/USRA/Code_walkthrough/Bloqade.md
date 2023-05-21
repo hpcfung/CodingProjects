@@ -9,11 +9,11 @@ which links to official docs https://carlobaldassi.github.io/ArgParse.jl/stable/
 
 `thermal` is a flag? (compare `action = :store_true`)  
 it doesn't take any argument?  
-actually, this 
+actually, this is `action = :command`
 https://carlobaldassi.github.io/ArgParse.jl/stable/arg_table/#Commands
 
-why commands are used: aesthetic choice? 
-"commands to look both as positional arguments or as options"
+Commands are a special kind of arguments which introduce sub-parsing sessions as soon as they are encountered by parse_args (and are therefore mutually exclusive).
+
 
 ```
 julia rydberg_edited.jl --help
@@ -22,9 +22,11 @@ julia rydberg_edited.jl --help
 ```
 julia rydberg_edited.jl thermal --help
 ```
-give help for sub-commands
+give help for sub-commands (see below "commands have their own help screens")
 
 cannot run `ArgParse` in REPL? need to specify Julia version each time?
+
+ternary operator https://docs.julialang.org/en/v1/manual/control-flow/#:~:text=The%20so%2Dcalled%20%22-,ternary%20operator,-%22%2C%20%3F%3A%2C%20is
 
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
