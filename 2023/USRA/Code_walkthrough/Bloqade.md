@@ -12,6 +12,20 @@ it doesn't take any argument?
 actually, this 
 https://carlobaldassi.github.io/ArgParse.jl/stable/arg_table/#Commands
 
+why commands are used: aesthetic choice? 
+"commands to look both as positional arguments or as options"
+
+```
+julia rydberg_edited.jl --help
+```
+
+```
+julia rydberg_edited.jl thermal --help
+```
+give help for sub-commands
+
+cannot run `ArgParse` in REPL? need to specify Julia version each time?
+
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
 `AbstractLattice{D}` implemented as abstract type  
