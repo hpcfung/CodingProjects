@@ -3,6 +3,15 @@
 `thermalstate(parsed_args["thermal"])` goes from main to functions  
 which calls `init_mc_cli(parsed_args)` at the beginning
 
+unlike python: `ArgParse` is not in the standard library  
+https://github.com/carlobaldassi/ArgParse.jl
+which links to official docs https://carlobaldassi.github.io/ArgParse.jl/stable/
+
+`thermal` is a flag? (compare `action = :store_true`)  
+it doesn't take any argument?  
+actually, this 
+https://carlobaldassi.github.io/ArgParse.jl/stable/arg_table/#Commands
+
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
 `AbstractLattice{D}` implemented as abstract type  
