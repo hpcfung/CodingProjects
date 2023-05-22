@@ -28,6 +28,9 @@ cannot run `ArgParse` in REPL? need to specify Julia version each time?
 
 ternary operator https://docs.julialang.org/en/v1/manual/control-flow/#:~:text=The%20so%2Dcalled%20%22-,ternary%20operator,-%22%2C%20%3F%3A%2C%20is
 
+"When a bare identifier or dot expression occurs after a semicolon, the keyword argument name is implied by the identifier or field name. For example `plot(x, y; width) is equivalent to plot(x, y; width=width)`"
+https://docs.julialang.org/en/v1/manual/functions/
+
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
 `AbstractLattice{D}` implemented as abstract type  
