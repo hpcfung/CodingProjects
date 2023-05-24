@@ -1,8 +1,11 @@
 
 ## QMC script
-`thermalstate(parsed_args["thermal"])` goes from main to functions  
+### L1
+the "main" here is just argparse, then all the computation is in one-line:  
+`thermalstate(parsed_args["thermal"])` (goes from main to functions)  
 which calls `init_mc_cli(parsed_args)` at the beginning
 
+### L4
 unlike python: `ArgParse` is not in the standard library  
 https://github.com/carlobaldassi/ArgParse.jl
 which links to official docs https://carlobaldassi.github.io/ArgParse.jl/stable/
@@ -25,6 +28,10 @@ julia rydberg_edited.jl thermal --help
 give help for sub-commands (see below "commands have their own help screens")
 
 cannot run `ArgParse` in REPL? need to specify Julia version each time?
+
+`===` operator  
+https://stackoverflow.com/questions/56852880/comparing-julia-variable-to-nothing-using-or  
+https://stackoverflow.com/questions/38601141/what-is-the-difference-between-and-comparison-operators-in-julia
 
 ternary operator https://docs.julialang.org/en/v1/manual/control-flow/#:~:text=The%20so%2Dcalled%20%22-,ternary%20operator,-%22%2C%20%3F%3A%2C%20is
 
