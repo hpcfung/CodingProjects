@@ -1,9 +1,9 @@
 
 ## QMC script
 ### L1
-the "main" here is just argparse, then all the computation is in one-line:  
-`thermalstate(parsed_args["thermal"])` (goes from main to functions)  
-which calls `init_mc_cli(parsed_args)` at the beginning
+the "main" here (the stuff after the `########` divider around line 212) is just argparse, then all the computation is in one-line:  
+`thermalstate(parsed_args["thermal"])` (~line 144)(goes from main to functions)  
+which calls `init_mc_cli(parsed_args)` in the first line
 
 ### L4
 unlike python: `ArgParse` is not in the standard library  
