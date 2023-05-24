@@ -56,9 +56,40 @@ Stacktrace:
 in expression starting at /home/hpcfung/qmc_test/rydberg_bloqade_ver.jl:310
 Running Rydberg((4,4), R_b=1.2, Ω=1.0, δ=1.0)
 ```
+###### seff
+```
+seff 6767275
+Job ID: 6767275
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 2
+CPU Utilized: 00:07:18
+CPU Efficiency: 49.21% of 00:14:50 core-walltime
+Job Wall-clock time: 00:07:25
+Memory Utilized: 37.39 GB
+Memory Efficiency: 58.42% of 64.00 GB
+```
+
 ##### 32 GB
 ```
 WARNING: both BloqadeODE and Yao export "iscached"; uses of it in module Bloqade must be qualified
 /var/spool/slurmd/job6767023/slurm_script: line 15: 157728 Killed                  julia rydberg_bloqade_ver.jl thermal 4 /home/hpcfung/qmc_test --rand-slice --restart
 slurmstepd: error: Detected 1 oom-kill event(s) in StepId=6767023.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
+```
+###### seff
+```
+seff 6767023
+Job ID: 6767023
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: OUT_OF_MEMORY (exit code 0)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:03:15
+CPU Efficiency: 11.89% of 00:27:20 core-walltime
+Job Wall-clock time: 00:03:25
+Memory Utilized: 31.34 GB
+Memory Efficiency: 97.95% of 32.00 GB
 ```
