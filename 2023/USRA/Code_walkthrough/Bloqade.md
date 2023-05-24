@@ -5,6 +5,12 @@ the "main" here (the stuff after the `########` divider around line 212) is just
 `thermalstate(parsed_args["thermal"])` (~line 144)(goes from main to functions)  
 which calls `init_mc_cli(parsed_args)` in the first line
 
+### mapping
+| QMC script      | Bloqade tutorial | Remarks |
+| ----------- | ----------- | ----------- |
+| `qmc_state`      | `ts`       | instance of `BinaryThermalState` object |
+| `H`   | `h_qmc`        | `h = rydberg_h` then `h_qmc = rydberg_qmc(h)`|
+
 ### L4
 unlike python: `ArgParse` is not in the standard library  
 https://github.com/carlobaldassi/ArgParse.jl
