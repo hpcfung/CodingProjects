@@ -3,7 +3,9 @@
 ### L1
 the "main" here (the stuff after the `########` divider around line 212) is just argparse, then all the computation is in one-line:  
 `thermalstate(parsed_args["thermal"])` (~line 144)(goes from main to functions)  
-which calls `init_mc_cli(parsed_args)` in the first line
+
+#### `function thermalstate(parsed_args)`
+Calls `init_mc_cli(parsed_args)` in the first line
 
 ### mapping
 | QMC script      | Bloqade tutorial | Remarks |
