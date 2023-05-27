@@ -42,8 +42,14 @@ So among `Ω, δ, R_b, beta, L`, `beta` and `L` stay the same
 `Ω` and `δ` stay the same (but different dimensions)  
 `R_b` and `Ω` (and `a`) become `C`
 
-
-
+### Convention in https://arxiv.org/abs/2012.12281
+```math
+\begin{align*}
+\frac{\hat{H}}{\hbar}&=\frac{\Omega}{2}\sum_{i}\hat{\sigma}_{i}^x-\Delta\sum_{i}\hat{n}_i+\sum_{i\lt j}V_{ij}\hat{n}_i\hat{n}_j\\
+V_{ij}&=\frac{V_0}{\left|\mathbf{x}_i-\mathbf{x}_j\right|^6}\\
+R_b&\equiv\left(\frac{V_0}{\Omega}\right)^{1/6}
+\end{align*}
+```
 
 ## Test
 `delta`: need to divide by `Omega = 4.24`, but why?
@@ -51,3 +57,6 @@ So among `Ω, δ, R_b, beta, L`, `beta` and `L` stay the same
 size = 4
 delta = -1.545
 ```
+no need to change beta? (energy scale?)
+
+what are the units of `delta = -1.545`?
