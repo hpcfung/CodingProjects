@@ -68,11 +68,12 @@ R_b = 1.15 # a = 1, R_b/a = 1.15
 Ω = 26.6407057024 # MHz, 2*pi*4.24 MHz
 C = 61.6215711289 # MHz * length^6, Omega * (R_b)^6, angular freq * length^6
 ```
-no need to change beta? (energy scale?)
+
 
 assume `a = 1 µm`
 where scale defines the unit distance in the unit μm of the lattice  
-The default scale is 1 μm
+The default scale is 1 μm  
+https://queracomputing.github.io/Bloqade.jl/dev/lattices/#BloqadeLattices.generate_sites:~:text=scale%20%3D%204.5)-,where,-scale%20defines%20the
 ```
 R_b = 1.15 # µm, R_b/a = 1.15
 C = 61.6215711289 # MHz * µm^6, Omega * (R_b)^6, angular freq * length^6
@@ -82,3 +83,7 @@ C = 61.6215711289 # MHz * µm^6, Omega * (R_b)^6, angular freq * length^6
 use convention in quantum simulator paper
 
 why is C much smaller than the default value in `BloqadeExpr.rydberg_h`?
+
+### To check
+1. no need to change beta? (energy scale?)
+2. lattice spacing: pretend `a = 1 µm`, or use actual value, then change `C`? (Should give the same thing?
