@@ -50,13 +50,35 @@ V_{ij}&=\frac{V_0}{\left|\mathbf{x}_i-\mathbf{x}_j\right|^6}\\
 R_b&\equiv\left(\frac{V_0}{\Omega}\right)^{1/6}
 \end{align*}
 ```
+```math
+\begin{align*}
+\frac{R_b}{a}&=1.15\\
+\Omega&=2\pi\times4.3\mbox{ MHz}\\
+\Delta&\in[-16\mbox{ MHz},14\mbox{ MHz}]
+\end{align*}
+```
+Is `∆` (-16 to 14 MHz) angular frequency or frequency?
 
 ## Test
 `delta`: need to divide by `Omega = 4.24`, but why?
 ```
 size = 4
-delta = -1.545
+delta = -1.545 # MHz?
+R_b = 1.15 # a = 1, R_b/a = 1.15 
+Ω = 26.6407057024 # MHz, 2*pi*4.24 MHz
+C = 61.6215711289 # MHz * length^6, Omega * (R_b)^6, angular freq * length^6
 ```
 no need to change beta? (energy scale?)
 
-what are the units of `delta = -1.545`?
+assume `a = 1 µm`
+where scale defines the unit distance in the unit μm of the lattice  
+The default scale is 1 μm
+```
+R_b = 1.15 # µm, R_b/a = 1.15
+C = 61.6215711289 # MHz * µm^6, Omega * (R_b)^6, angular freq * length^6
+```
+
+
+use convention in quantum simulator paper
+
+why is C much smaller than the default value in `BloqadeExpr.rydberg_h`?
