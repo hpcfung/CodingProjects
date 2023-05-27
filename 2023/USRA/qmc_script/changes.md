@@ -1,4 +1,4 @@
-Convention in https://arxiv.org/abs/2107.00766
+### Convention in https://arxiv.org/abs/2107.00766
 ```math
 \begin{align*}
 \hat{H}&=\frac{\Omega}{2}\sum_{i=1}^N\hat{\sigma}_{i}^x-\delta\sum_{i=1}^N\hat{n}_i+\sum_{i\lt j}V_{ij}\hat{n}_i\hat{n}_j\\
@@ -11,7 +11,17 @@ lattice spacing $a$ (in paper: $a=1$)
 blockade radius $R_b$ (dimensionless?)  
 Parameters: $\Omega,\delta,R_b,a$
 
-Convention in https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/ (assumiing $\phi=0$)  
+### Inputs of original QMC script
+```
+Ω
+δ
+R_b
+beta
+L
+```
+No $a$? In `help`, `Rydberg blockade radius (in units of the lattice spacing).`
+
+### Convention in https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/ (assumiing $\phi=0$)  
 https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydberg_h
 ```math
 \begin{align*}
@@ -28,12 +38,16 @@ lattice spacing is implicit in `atoms` (atom positions)
 `rydberg_h(atoms; [C=2π * 862690 * MHz*µm^6], Ω[, ϕ, Δ])`  
 Meaning of `Ω[, ϕ, Δ]`? `Δ` divided by `Ω`?
 
-Inputs of original QMC script
+So among `Ω, δ, R_b, beta, L`, `beta` and `L` stay the same  
+`Ω` and `δ` stay the same (but different dimensions)  
+`R_b` and `Ω` (and `a`) become `C`
+
+
+
+
+## Test
+`delta`: need to divide by `Omega = 4.24`, but why?
 ```
-Ω
-δ
-R_b
-beta
-L
+size = 4
+delta = -1.545
 ```
-No $a$? In `help`, `Rydberg blockade radius (in units of the lattice spacing).`
