@@ -87,3 +87,4 @@ why is C much smaller than the default value in `BloqadeExpr.rydberg_h`?
 ### To check
 1. no need to change beta? (energy scale?)
 2. lattice spacing: pretend `a = 1 µm`, or use actual value, then change `C`? (Should give the same thing?)
+3. `delta`: need to divide by `Omega = 4.24`?
