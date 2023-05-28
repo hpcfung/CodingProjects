@@ -36,6 +36,8 @@ function init_mc_cli(parsed_args)
 
     L = parsed_args["L"]
 
+    C = Ω*(R_b^6)
+
     # MC parameters
     M = parsed_args["M"]  # initial simulation cell length
     MCS = parsed_args["measurements"] # the number of samples to record per batch
@@ -65,7 +67,7 @@ function init_mc_cli(parsed_args)
         # H = Rydberg((L, L), R_b, Ω, δ; pbc=false)
         # change scale?
         atoms = generate_sites(SquareLattice(), L, L, scale = 1)
-        h = rydberg_h(atoms; Δ = δ, Ω = Ω)
+        h = rydberg_h(atoms; C = C, Δ = δ, Ω = Ω)
         H = rydberg_qmc(h)
 
         qmc_state = BinaryThermalState(H, M)
@@ -168,7 +170,10 @@ function thermalstate(parsed_args)
                 spin_prop = sample(H, qmc_state, msmt_slice)
                 measurements[:, i] = spin_prop
 
-                observables[i, :n_sso] = num_single_site_offdiag(H, qmc_state.operator_list)
+                # observables[i, :n_sso] = num_single_site_offdiag(H, qmc_state.operator_list)
+                # observables[i, :n_sso] = sum(x -> QMC.issiteoperator(H, x) && !QMC.isdiagonal(H, x), qmc_state.operator_list)
+                # observables[i, :n_sso] = sum(x -> issiteoperator(H, x) && !isdiagonal(H, x), qmc_state.operator_list)
+                observables[i, :n_sso] = sum(x -> BloqadeQMC.issiteoperator(H, x) && !BloqadeQMC.isdiagonal(H, x), qmc_state.operator_list)
                 observables[i, :batch] = b
             end
             observables[i, :n_ops] = n_ops
@@ -233,11 +238,11 @@ end
         arg_type = String
     
     "--omega"
-        help = "Strength of the transverse field"
+        help = "Strength of the transverse field (MHz)"
         arg_type = Float64
         default = 1.0
     "--delta"
-        help = "Strength of the detuning"
+        help = "Strength of the detuning (MHz)"
         arg_type = Float64
         default = 1.0
     "--radius", "-R"
