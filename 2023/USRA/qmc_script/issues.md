@@ -21,9 +21,8 @@ I think it was mentioned last meeting that `delta` needs to be divided by `Omega
 # 3
 Are we using the convention where length is nondimensionalized by the lattice spacing $a$? However the Bloqade code uses units of `µm` (eg interaction matrix). Is nondimensionalization equivalent to setting `a = 1 µm`? Alternatively I can use `a = 6.7 µm` from the paper and adjust the interaction matrix accordingly.
 
-# Questions
-1. no need to change beta? (energy scale?)
-
+# 4
+Do we simply use `beta = [0.5, 1, 2, 4, 8, 16, 32, 48, 64]`? ie no nondimensionalization is necessary? (I cannot find the corresponding documentation for Bloqade.)
 
 
 # Background
