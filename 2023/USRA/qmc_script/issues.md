@@ -13,7 +13,7 @@ Should we use `Omega = 4.24` (it was mentioned last meeting)(this would mean $\O
 
 # 2
 ## (a)
-The `∆` value used in the paper is $\Delta\in[-16\mbox{ MHz},14\mbox{ MHz}]$. Is `∆` (-16 to 14 MHz) the angular frequency or frequency? ie does it need an additional factor of $2\pi$?
+The `∆` value used in the paper is $\Delta\in[-16\mbox{ MHz},14\mbox{ MHz}]$. Is this `∆` (-16 to 14 MHz) the frequency or angular frequency? ie does it need an additional factor of $2\pi$?
 
 ## (b)
 I think it was mentioned last meeting that `delta` needs to be divided by `Omega = 4.24`? But if we are using $\Delta = -1.545\mbox{ MHz}$ (up to $13.455\mbox{ MHz}$), then it is already in the range $[-16\mbox{ MHz},14\mbox{ MHz}]$ and of the right dimensions. Is division by $\Omega$ still necessary?
