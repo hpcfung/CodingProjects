@@ -1,11 +1,27 @@
 
 ## QMC script
 ### L1
+In additional to "main", 3 functions:
+```
+function init_mc_cli(parsed_args)
+function continue_simulation(path, parsed_args)
+function thermalstate(parsed_args)
+```
+
+#### Runtime
 the "main" here (the stuff after the `########` divider around line 212) is just argparse, then all the computation is in one-line:  
 `thermalstate(parsed_args["thermal"])` (~line 144)(goes from main to functions)  
 
-#### `function thermalstate(parsed_args)`
+##### `function thermalstate(parsed_args)`
 Calls `init_mc_cli(parsed_args)` in the first line
+
+##### function init_mc_cli(parsed_args)
+If no restart flag, calls `continue_simulation(path, parsed_args)`
+
+### L2
+##### `function thermalstate(parsed_args)`
+two nested loops, over batches, and over Monte Carlo steps  
+`batches`: param passed in argparse (or from `continue_simulation`? actually no, that `batches` is not passed/is an internal var?)
 
 ### mapping
 | QMC script      | Bloqade tutorial | Remarks |
@@ -45,6 +61,11 @@ ternary operator https://docs.julialang.org/en/v1/manual/control-flow/#:~:text=T
 
 "When a bare identifier or dot expression occurs after a semicolon, the keyword argument name is implied by the identifier or field name. For example `plot(x, y; width) is equivalent to plot(x, y; width=width)`"
 https://docs.julialang.org/en/v1/manual/functions/
+
+https://docs.julialang.org/en/v1/manual/strings/#string-interpolation
+
+`rm(old_qmc_state)` deletes old `state.jld2` file  
+https://docs.julialang.org/en/v1/base/file/#Base.Filesystem.rm
 
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
