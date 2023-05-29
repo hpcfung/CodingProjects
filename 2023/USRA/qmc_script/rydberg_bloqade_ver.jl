@@ -26,6 +26,10 @@ using ArgParse
 
 
 function init_mc_cli(parsed_args)
+"""
+Returns H, qmc_state, path, mc_opts, rng, diagnostics, starting_batch
+for Monte Carlo
+"""
     Ω = parsed_args["omega"]
     δ = parsed_args["delta"]
     R_b = parsed_args["radius"]
@@ -97,6 +101,10 @@ function init_mc_cli(parsed_args)
 end
 
 function continue_simulation(path, parsed_args)
+"""
+Returns H, qmc_state, rng, diagnostics, starting_batch
+if there are no errors
+"""
     checkpoints = filter(readdir(path)) do s
         endswith(s, "state.jld2") && contains(s, "batch")
     end
