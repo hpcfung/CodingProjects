@@ -84,5 +84,6 @@ https://queracomputing.github.io/Bloqade.jl/dev/lattices/#BloqadeLattices.genera
 In my code, I basically used 
 ```
 Rb = 1.05
-h = rydberg_h(atoms; C = Ω*(R_b^6), Δ = -1.545, Ω = 26.6407057024)```
+h = rydberg_h(atoms; C = Ω*(R_b^6), Δ = -1.545, Ω = 26.6407057024)
+```
 
