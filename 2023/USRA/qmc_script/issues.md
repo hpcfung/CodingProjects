@@ -56,26 +56,30 @@ See https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/ (assuming $\ph
 V_{jk}&=\frac{C_6}{|\mathbf{x}_j-\mathbf{x}_k|^6}
 \end{align*}
 ```
-
-   
+These parameters enter the code through `BloqadeExpr.rydberg_h`  
 https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydberg_h
-
-
-parameters passed to `rydberg_h`: `C`, `Ω`, `Δ`  
-lattice spacing is implicit in `atoms` (atom positions)  
-```math
-\frac{\Omega}{\hbar}\left(R_b a\right)^6=C_6
 ```
-`rydberg_h(atoms; [C=2π * 862690 * MHz*µm^6], Ω[, ϕ, Δ])`  
-Meaning of `Ω[, ϕ, Δ]`? `Δ` divided by `Ω`?
+rydberg_h(atoms; [C=2π * 862690 * MHz*µm^6], Ω[, ϕ, Δ])
+```
+`C`: default unit is `MHz*µm^6`  
+`Ω`: default unit is `MHz`  
+`Δ`: default unit is `MHz`
 
-So among `Ω, δ, R_b, beta, L`, `beta` and `L` stay the same  
-`Ω` and `δ` stay the same (but different dimensions)  
-`R_b` and `Ω` (and `a`) become `C`
+Is `Ω[, ϕ, Δ]` a typo?
 
+Comparing to the above, we see that $C_6=V_0$ so 
 ```math
 \begin{align*}
-C&=\Omega R_{b}^6
+C_6&=\Omega R_{b}^6
 \end{align*}
 ```
+
+Lattice spacing is given by  
+```
+atoms = generate_sites(SquareLattice(), L, L, scale = 1)
+```
+scale defines the unit distance in the unit μm of the lattice  
+https://queracomputing.github.io/Bloqade.jl/dev/lattices/#BloqadeLattices.generate_sites:~:text=scale%20%3D%204.5)-,where,-scale%20defines%20the
+
+In my code, I basically used `h = rydberg_h(atoms; C = Ω*(R_b^6), Δ = -1.545, Ω = 26.6407057024)`.
 
