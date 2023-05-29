@@ -83,7 +83,9 @@ https://queracomputing.github.io/Bloqade.jl/dev/lattices/#BloqadeLattices.genera
 
 In my code, I basically used 
 ```
-Rb = 1.05
+Rb = 1.05 # a = 1, R_b/a = 1.15 
+Ω = 26.6407057024 # MHz, 2*pi*4.24 MHz
+C = 61.6215711289 # MHz * µm^6, Omega * (R_b)^6, angular freq * length^6
 h = rydberg_h(atoms; C = Ω*(R_b^6), Δ = -1.545, Ω = 26.6407057024)
 ```
 
