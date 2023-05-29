@@ -24,6 +24,8 @@ Are we using the convention where length is nondimensionalized by the lattice sp
 # 4
 Do we simply use `beta = [0.5, 1, 2, 4, 8, 16, 32, 48, 64]`? ie no nondimensionalization is necessary? (I cannot find the corresponding documentation for Bloqade.)
 
+# 5
+The default value of `C` in Bloqade is `rydberg_h(atoms; [C=2π * 862690 * MHz*µm^6], Ω[, ϕ, Δ])` but here `C = 61.6215711289 # MHz * µm^6`? Why does the scale differ by this much?
 
 # Background
 ## Convention in arXiv:2012.12281 (quantum simulator paper)
@@ -46,7 +48,7 @@ $\hbar$ implies that the parameters $\Omega$ and $\Delta$ are angular frequencie
 
 
 ## Convention in Bloqade
-See https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/
+See https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/ (assuming $\phi=0$)
 
 ```math
 \begin{align*}
@@ -55,10 +57,10 @@ V_{jk}&=\frac{C_6}{|\mathbf{x}_j-\mathbf{x}_k|^6}
 \end{align*}
 ```
 
- (assumiing $\phi=0$)  
+   
 https://queracomputing.github.io/Bloqade.jl/dev/hamiltonians/#BloqadeExpr.rydberg_h
 
-because $\hbar$: angular frequency (code: comes in default units, eg `MHz`)  
+
 parameters passed to `rydberg_h`: `C`, `Ω`, `Δ`  
 lattice spacing is implicit in `atoms` (atom positions)  
 ```math
@@ -70,4 +72,10 @@ Meaning of `Ω[, ϕ, Δ]`? `Δ` divided by `Ω`?
 So among `Ω, δ, R_b, beta, L`, `beta` and `L` stay the same  
 `Ω` and `δ` stay the same (but different dimensions)  
 `R_b` and `Ω` (and `a`) become `C`
+
+```math
+\begin{align*}
+C&=\Omega R_{b}^6
+\end{align*}
+```
 
