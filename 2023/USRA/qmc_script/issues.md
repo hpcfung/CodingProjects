@@ -81,5 +81,8 @@ atoms = generate_sites(SquareLattice(), L, L, scale = 1)
 scale defines the unit distance in the unit μm of the lattice  
 https://queracomputing.github.io/Bloqade.jl/dev/lattices/#BloqadeLattices.generate_sites:~:text=scale%20%3D%204.5)-,where,-scale%20defines%20the
 
-In my code, I basically used `h = rydberg_h(atoms; C = Ω*(R_b^6), Δ = -1.545, Ω = 26.6407057024)`.
+In my code, I basically used 
+```
+Rb = 1.05
+h = rydberg_h(atoms; C = Ω*(R_b^6), Δ = -1.545, Ω = 26.6407057024)```
 
