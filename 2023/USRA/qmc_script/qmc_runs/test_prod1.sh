@@ -11,7 +11,7 @@ module load julia/1.8.5 StdEnv/2020
 
 # cd to qmc_test dir
 # sbatch qmc_prod.sh
-julia rydberg_bloqade_ver.jl thermal 5 /home/hpcfung/qmc_test --delta -0.364386792453 --radius 1.05 --beta 0.5 --equilibration 100_000 --measurements 1_000_000 --rand-slice --restart
+julia rydberg_bloqade_ver.jl thermal 5 /home/hpcfung/qmc_test --delta -0.364386792453 --radius 1.05 --beta 0.5 --measurements 100000 --batches 10 --restart
 
 echo 'qmc program completed'
 
@@ -19,7 +19,8 @@ echo 'qmc program completed'
 # Omega = 1.0 (default)
 # delta = -0.364386792453 = -1.545/4.24
 # seed = 1234 (default)
+# equilibration = 100000 = measurements (default)
 # batches = 100 (default)
 
-# 6894245
-# 31 May 3.15 pm
+# June 1 3.50 pm
+# 6911828
