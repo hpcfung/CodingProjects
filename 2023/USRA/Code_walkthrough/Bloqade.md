@@ -23,6 +23,17 @@ If no restart flag, calls `continue_simulation(path, parsed_args)`
 two nested loops, over batches, and over Monte Carlo steps  
 `batches`: param passed in argparse (or from `continue_simulation`? actually no, that `batches` is not passed/is an internal var?)
 
+
+if no restart flag but no previous path  
+return nothing  
+res === nothing  
+so still generates anyway
+
+how much precision from path?  
+no: enter param through cmd  
+construct/search path from param  
+param not constructed from path!
+
 ### mapping
 | QMC script      | Bloqade tutorial | Remarks |
 | ----------- | ----------- | ----------- |
