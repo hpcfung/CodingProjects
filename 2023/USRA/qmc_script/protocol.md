@@ -1,1 +1,6 @@
-desmos divide (copy all digits)
+desmos divide (copy all digits) eg -0.364386792453 = -1.545/4.24
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| -1.545      | -0.364386792453       |
+| -0.545   | -0.128537735849        |
