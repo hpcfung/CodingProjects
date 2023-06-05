@@ -351,7 +351,7 @@
 			<td rowspan="3" align="center">beta=64</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
+			<td>0</td>
 			<td></td>
 			<td></td>
 			<td></td>
