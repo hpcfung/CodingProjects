@@ -22,5 +22,5 @@ move out file to out dir
 
 each time update: download all files, upload to google drive in one go
 
-L = 5, 
+L = 5, beta = 0.5
 1 GB, 2-5 mins, about the same for different delta
