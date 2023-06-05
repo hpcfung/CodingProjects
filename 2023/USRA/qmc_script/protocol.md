@@ -13,6 +13,6 @@ desmos divide (copy all digits) eg -0.364386792453 = -1.545/4.24
 run script  
 upload script  
 google sheets
-download, delete old  
-upload google drive
-move to out dir
+move out file to out dir
+
+each time update: download all files, upload to google drive in one go
