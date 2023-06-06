@@ -50,16 +50,16 @@
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=1</td>
