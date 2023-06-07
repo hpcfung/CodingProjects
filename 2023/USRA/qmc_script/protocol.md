@@ -22,13 +22,24 @@ move out file to out dir
 
 each time update: download all files, upload to google drive in one go
 
-L = 5, beta = 0.5
+L = 5, beta = 0.5, Rb = 1.05
 1 GB, 2-5 mins, about the same for different delta
 beta = 16: 10 mins  
 beta = 64: 20 mins
 
-L = 6, beta = 64: 24 mins  
-1 GB
+~1 GB for all
+
+larger Rb longer time  
+
+
+| beta = 64      | Rb = 1.05 | Rb = 1.3 |
+| ----------- | ----------- | ----------- |
+| L = 5      | 20 mins       |  |
+| L = 6      | 24 mins       | 1 hr 13 mins |
+| L = 11 | 1 h 41 mins (1.24 GB) | |
+| L = 12 | 2 h 20 mins (1.22 GB) | |
+| L = 15 | >3 h (1.26 GB) | |
+| L = 20      | >6 h (1.38 GB)      | f |
 
 ```
 0-26 # 9*3=27
