@@ -29,3 +29,10 @@ beta = 64: 20 mins
 
 L = 6, beta = 64: 24 mins  
 1 GB
+
+```
+0-26 # 9*3=27
+3-26
+
+beta start from 3//3 + 1 = 2 (2nd beta)
+```
