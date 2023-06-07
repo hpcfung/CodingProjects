@@ -26,3 +26,5 @@ L = 5, beta = 0.5
 1 GB, 2-5 mins, about the same for different delta
 beta = 16: 10 mins  
 beta = 64: 20 mins
+
+L = 6, beta = 64: 24 mins
