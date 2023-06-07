@@ -27,4 +27,5 @@ L = 5, beta = 0.5
 beta = 16: 10 mins  
 beta = 64: 20 mins
 
-L = 6, beta = 64: 24 mins
+L = 6, beta = 64: 24 mins  
+1 GB
