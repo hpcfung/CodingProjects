@@ -34,7 +34,7 @@ larger Rb longer time
 
 | beta = 64      | Rb = 1.05 | Rb = 1.3 |
 | ----------- | ----------- | ----------- |
-| L = 5      | 20 mins       |  |
+| L = 5      | 20 mins       | (x10, 1.56 GB) |
 | L = 6      | 24 mins       | 1 hr 13 mins |
 | L = 11 | 1 h 41 mins (1.24 GB) | |
 | L = 12 | 2 h 20 mins (1.22 GB) | |
