@@ -65,328 +65,328 @@
 			<td rowspan="3" align="center">beta=1</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=2</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=4</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 			<tr>
 			<td rowspan="3" align="center">beta=8</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=16</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td>0</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=32</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=48</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td rowspan="3" align="center">beta=64</td>
 			<td rowspan="3">Rb</td>
 			<td>1.05</td>
-			<td>0</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.15</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 		<tr>
 			<td>1.3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
 		</tr>
 	</tbody>
 </table>
