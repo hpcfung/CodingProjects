@@ -18,7 +18,7 @@ def add_prefix(line):
         else:
             return line
     # modify this depending on doc
-    tab_list = [] # 'References','Exercises'
+    tab_list = ['Notes and Referenees'] # 'References','Exercises'
     for check_word in tab_list:
         # if check_word in line:
         #     return '\t' + line
@@ -31,7 +31,7 @@ def add_prefix(line):
     #     return '\t\t' + line
 
     prefix = line.partition(" ")[0]
-    depth = prefix.count('.')
+    depth = prefix.count('.') - depth_offset
     # if no '.' in first "word", then returns line
     # eg Index
     # this also works for appendices, eg A.1
@@ -76,13 +76,16 @@ if __name__ == "__main__":
     2. Change with_parts (eg if there is Part 1, Part 2, ...)
        - Style: Part or PART at the beginning of add_prefix
     3. Change offset and possibly offset_list
-       - eg ('10 Self-Assembly',32): if '10 Self-Assembly' in line, change offset to 32
+       - eg ('10 Self-Assembly',32): if '10 Self-Assembly' in line, change offset from initial value to 32
        - if not necessary, leave offset_list = []
     4. Add if blocks in add_prefix() to deal with exceptions (under '# modify this depending on doc')
        - eg Exercises in each chapter should be tabbed but does not by default
        - compare eg A.1 is tabbed once by default
        - eg Index is not tabbed by default because it has no dots
-    5. Toggle skip_after_word, and if true, change skip_word
+       - if not necessary, check that tab_list is empty
+    5. Change depth_offset (for default behaviro: 0; if chapter: XV., depth_offset = 1)
+       - note: if depth_offset = 1, then eg Bibliography, depth = -1, but still works (no tabs)
+    6. Toggle skip_after_word, and if true, change skip_word
        - Stops tabbing after skip_word (return line as is)
        
     default behavior: not dots = no tab
@@ -90,7 +93,7 @@ if __name__ == "__main__":
     
     """
 
-    input_filename = 'control'
+    input_filename = 'mittleman'
     file1 = open(input_filename+'_prepos.txt', 'r')
     Lines = file1.readlines()
     Lines_write = []
@@ -98,13 +101,20 @@ if __name__ == "__main__":
     with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 13
-    offset_list = []
+    offset = 11
+    offset_list = [('Chapter 4. Spontaneous Radiation',10),
+                   ('Chapter 5. Deflection of Atoms',9),
+                   ('Chapter 7. Multiphoton Ionization',8),
+                   ('Chapter 8. Electron-Atom',7),
+                   ('Appendix: The Effect',6),
+                   ('Series Publications',5)]
     # offset_list = [('10 Self-Assembly',32),
     #                ('12 Biological Mimics and',31),
     #                ('13 Interfaces and Liquid',30),
     #                ('14 Supramolecular Polymers, Gels',29),
     #                ('15 Nanochemistry',28)]
+
+    depth_offset = 0
 
     skip_after_word = False
     skip_word = 'Appendices'
