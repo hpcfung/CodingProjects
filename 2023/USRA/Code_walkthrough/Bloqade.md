@@ -6,7 +6,7 @@ For each batch generates `raw_observables.csv` and `samples.bin`
 
 #### `raw_observables.csv`
 batch 0: equilibration  
-batch,n_sso,n_ops
+batch,n_sso,n_ops (number of operators sampled?)
 
 #### `samples.bin`
 `.bin` is binary
@@ -47,6 +47,8 @@ how much precision from path?
 no: enter param through cmd  
 construct/search path from param  
 param not constructed from path!
+
+`measurements` saved as `samples.bin`
 
 ### mapping
 | QMC script      | Bloqade tutorial | Remarks |
