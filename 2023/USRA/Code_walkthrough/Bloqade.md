@@ -1,6 +1,11 @@
 
 ## QMC script
+
 ### L1
+For each batch generates `raw_observables.csv` and `samples.bin` (binary)  
+(batch 0: equilibration)
+
+### L2
 In additional to "main", 3 functions:
 ```
 function init_mc_cli(parsed_args)
@@ -18,7 +23,7 @@ Calls `init_mc_cli(parsed_args)` in the first line
 ##### function init_mc_cli(parsed_args)
 If no restart flag, calls `continue_simulation(path, parsed_args)`
 
-### L2
+### L3
 ##### `function thermalstate(parsed_args)`
 two nested loops, over batches, and over Monte Carlo steps  
 `batches`: param passed in argparse (or from `continue_simulation`? actually no, that `batches` is not passed/is an internal var?)
