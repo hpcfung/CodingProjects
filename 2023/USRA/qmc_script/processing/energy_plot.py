@@ -70,5 +70,7 @@ if __name__ == "__main__":
     print(f"(beta,energy) = {results}")
 
     plt.plot(beta_num_list,energy_list)
+    plt.xlabel('beta')
+    plt.ylabel('energy')
     plt.show()
 
