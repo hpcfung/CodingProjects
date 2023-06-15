@@ -14,6 +14,8 @@ batch,n_sso,n_ops (number of operators sampled?)
 1s and 0s  
 shape: `(num_spins, num_measurements)`
 
+`measurements = zeros(Bool, nspins(H), MCS)` (after equilibriation)
+
 ### L1
 In additional to "main", 3 functions:
 ```
@@ -50,11 +52,16 @@ param not constructed from path!
 
 `measurements` saved as `samples.bin`
 
+we need to store the number of operators contained in each sample. This number will fluctuate from sample to sample as we build the Markov chain. It is directly returned by the mc_step_beta!() function  
+https://queracomputing.github.io/Bloqade.jl/dev/tutorials/7.QMC/main/#:~:text=final%20energy%20plot.-,Second,-%2C%20we%20need%20to
+
 ### mapping
 | QMC script      | Bloqade tutorial | Remarks |
 | ----------- | ----------- | ----------- |
 | `qmc_state`      | `ts`       | instance of `BinaryThermalState` object |
 | `H`   | `h_qmc`        | `h = rydberg_h` then `h_qmc = rydberg_qmc(h)`|
+| `spin_prop` | `SSE_slice` | `spin_prop = sample(H, qmc_state, msmt_slice)` vs 'SSE_slice = sample(h_qmc,ts, 1)'?|
+| `measurements`   | `occs`        | |
 
 ### L4
 unlike python: `ArgParse` is not in the standard library  
@@ -93,6 +100,9 @@ https://docs.julialang.org/en/v1/manual/strings/#string-interpolation
 
 `rm(old_qmc_state)` deletes old `state.jld2` file  
 https://docs.julialang.org/en/v1/base/file/#Base.Filesystem.rm
+
+### Energy
+Same as https://queracomputing.github.io/Bloqade.jl/dev/tutorials/7.QMC/main/#:~:text=the%20energy%20expectation-,value,-%3A
 
 ## 1D chain
 `BloqadeLattices>t5g0l>src>lattice.jl` (VS code: right click `generate_sites`, Go to Definition)  
