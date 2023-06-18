@@ -36,7 +36,7 @@ larger Rb longer time
 | ----------- | ----------- | ----------- |
 | L = 5      | 20 mins       | (x10, 1.56 GB) |
 | L = 6      | 24 mins       | 1 hr 13 mins |
-| L = 11 | 1 h 41 mins (1.24 GB) | >6 h (pred: 8.5 h)(1.27 GB) |
+| L = 11 | 1 h 41 mins (1.24 GB) | 6 h 50 mins (1.26 GB) |
 | L = 12 | 2 h 20 mins (1.22 GB) | >6 h (pred: 11 h)(1.29 GB) |
 | L = 15 | >3 h (1.26 GB) | >10 h (pred: 16 h)(1.31 GB)|
 | L = 16 | | >10h (pred: 28h)(1.28 GB) |
