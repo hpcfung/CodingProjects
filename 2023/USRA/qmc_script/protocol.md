@@ -45,8 +45,14 @@ larger Rb longer time
 
 fluctuations for large `L`
 ```
-10*3*9 = 270
+3*9*10= 270
 0-269
+
+every 1: delta
+every 10: rb
+every 90: beta
+27, 10
+
 
 0-26 # 9*3=27
 3-26
@@ -54,5 +60,12 @@ fluctuations for large `L`
 beta start from 3//3 + 1 = 2 (2nd beta)
 
 ```
+
+change file name  
+change job, output name  
+change time  
+change array index  
+change `L`  
+change `sbatch` copy and paste
 
 
