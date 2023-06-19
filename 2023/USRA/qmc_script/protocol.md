@@ -37,13 +37,15 @@ larger Rb longer time
 | L = 5      | 20 mins       | (x10, 1.56 GB) |
 | L = 6      | 24 mins       | 1 hr 13 mins |
 | L = 11 | 1 h 41 mins (1.24 GB) | 6 h 50 mins (1.26 GB) |
-| L = 12 | 2 h 20 mins (1.22 GB) | >6 h (pred: 11 h)(1.29 GB) |
-| L = 15 | >3 h (1.26 GB) | >10 h (pred: 16 h)(1.31 GB)|
-| L = 16 | | >10h (pred: 28h)(1.28 GB) |
-| L = 19 | | >20 h (pred: 37h)(1.31 GB) |
-| L = 20   | >6 h (1.38 GB)      | >20 h(pred: 31.5 h)(1.63 GB) |
+| L = 12 | 2 h 20 mins (1.22 GB) | 11 h 29 mins (pred: 11 h)(1.26 GB) |
+| L = 15 | >3 h (1.26 GB) | 15 h 8 mins (pred: 16 h)(1.31 GB)|
+| L = 16 | | 17 h 46 mins (pred: 28h)(1.52 GB) |
+| L = 19 | | 33 h 22 mins (pred: 37h)(1.34 GB) |
+| L = 20   | >6 h (1.38 GB) | 27 h 12 mins(pred: 31.5 h)(1.38 GB) |
 
 ```
+fluctuations for large `L`
+
 0-26 # 9*3=27
 3-26
 
