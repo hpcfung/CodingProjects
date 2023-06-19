@@ -68,4 +68,5 @@ change array index
 change `L`  
 change `sbatch` copy and paste
 
+check scratch qmc_data empty
 
