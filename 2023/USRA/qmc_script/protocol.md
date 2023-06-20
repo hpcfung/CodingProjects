@@ -43,7 +43,7 @@ larger Rb longer time
 | L = 19 | | 33 h 22 mins (pred: 37h)(1.34 GB) |
 | L = 20   | >6 h (1.38 GB) | 27 h 12 mins(pred: 31.5 h)(1.38 GB) |
 
-fluctuations for large `L`
+fluctuations for large `L`; add 50% more time than max(actual test, pred)?
 ```
 3*9*10= 270
 0-269
