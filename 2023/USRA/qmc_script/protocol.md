@@ -68,5 +68,7 @@ change array index
 change `L`  
 change `sbatch` copy and paste
 
-check scratch qmc_data empty
+check scratch qmc_data empty  
+run `sbatch`  
+(exit `.sh` file in IDE to avoid unwanted edits)
 
