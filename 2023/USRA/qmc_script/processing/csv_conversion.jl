@@ -7,9 +7,9 @@ https://github.com/PIQuIL/EssiQQurke/tree/main/data
 """
 function save_as_csv(bin_path) # eg batch_01_samples.bin
     # read!(samples_file_path, falses(num_spins, num_measurements)
-    arr = read!(bin_path, falses(25, 100000))
+    arr = read!(bin_path, falses(num_spins, 100000))
     println(typeof(arr)) # BitMatrix
-    println(size(arr)) # (25, 100000)
+    println(size(arr)) # (num_spins, 100000)
 
     # println(arr)
     # println(typeof(Int.(permutedims(arr))))
@@ -64,7 +64,8 @@ end
 ###################### MAIN #############################
 
 # "/home/hpcfung/qmc_test/L=11"
-base_path = "/home/hpcfung/scratch/qmc_data/L=5"
+base_path = "/home/hpcfung/scratch/qmc_data/L=6"
+num_spins = 36
 
 # /home/hpcfung/scratch/qmc_data/L=5/Rb=1.05/omega=1.00/delta=-0.13/beta=0.5/seed=1234/batch_01_samples.bin
 
