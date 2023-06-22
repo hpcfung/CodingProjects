@@ -15,7 +15,15 @@ graph.json
 weight source target? where do the weights come from?
 
 figure out what dataloader does?
+## Usage
 
+### data
+it looks like the names of subfolders in `data` do not have any restrictions?  
+`def read_subfolder_data` in `rydberggpt/data/loading/utils.py`  
+`for folder in os.listdir(data_path):`  
+it just reads into dataframe and append `data` (list)
+
+## L
 key = pytorch lightning
 ```
 class LitMLP(pl.LightningModule):
