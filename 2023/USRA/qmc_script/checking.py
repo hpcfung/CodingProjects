@@ -26,6 +26,10 @@ if __name__ == "__main__":
     module load python/3.10
     python checking.py
 
+    Checks that the last line in .out is of the form qmc program ... completed
+    Looks for error keywords in error_keywords_list
+    
+    Error examples:
     slurmstepd: error: *** JOB 6800453 ON gra812 CANCELLED AT 2023-05-26T02:17:00 DUE TO TIME LIMIT ***
     slurmstepd: error: Detected 1 oom-kill event(s) in StepId=6800197.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
     """
