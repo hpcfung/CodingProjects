@@ -1,6 +1,11 @@
-import sys, re
+import sys, re, os
 
 def check_file(file_name):
+    if not os.path.isfile(file_name):
+        # comment this out if terminal cannot print all
+        print(f"{file_name} does not exist")
+        return
+
     file1 = open(file_name, 'r')
     Lines = file1.readlines()
 
@@ -44,20 +49,21 @@ if __name__ == "__main__":
     Protocol: For each L,
     """
 
-    job_id = 7228219
+    job_min_id = 7252181
+    job_max_id = 7253874
     job_num = 270
-    job_name = "out/7228219/L11_prod_test-" # "L20_prod_test-"
+    job_name = "L12_prod_test-" # "out/7228219/L11_prod_test-"
 
     error_keywords_list = ["slurmstepd", "error", "CANCEL", "LIMIT", "kill"]
 
     job_list = [False] * job_num
-    for k in range(job_id,job_id+job_num):
+    for k in range(job_min_id,job_max_id+1): # there may be gaps in job id
         check_file(file_name=job_name+str(k)+".out")
         # sys.exit() # first .out only
     
     if all(job_list):
         print(f"All {job_num} tasks are present.")
     else:
-        missing_jobs = [ID for ID in range(job_num) if job_list[x] == False]
+        missing_jobs = [task for task in range(job_num) if job_list[task] == False]
         print(f"Missing tasks = {missing_jobs}")
-    print("All programs are complete. No error keywords found.")
+    print("All present jobs are complete. No error keywords found.")
