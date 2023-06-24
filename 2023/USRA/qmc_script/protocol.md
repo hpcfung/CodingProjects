@@ -60,7 +60,7 @@ every 90: beta
 beta start from 3//3 + 1 = 2 (2nd beta)
 
 ```
-
+copy script  
 change file name  
 change job, output name  
 change time  
