@@ -1,6 +1,6 @@
 desmos divide (copy all digits) eg -0.364386792453 = -1.545/4.24
 
-| Syntax      | Description |
+| Value in table  | Command line (nondimensionalized) |
 | ----------- | ----------- |
 | -1.545      | -0.364386792453       |
 | -0.545   | -0.128537735849        |
