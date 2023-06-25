@@ -47,12 +47,18 @@ if __name__ == "__main__":
     slurmstepd: error: Detected 1 oom-kill event(s) in StepId=6800197.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
     
     Protocol: For each L,
+    1 Change job_min_id, job_max_id (look at first and last .out)
+    2 Change job_num (usually stay the same)
+    3 Change job_name (usually just LXX)
+
+    If necessary:
+    - Change error_keywords_list
     """
 
-    job_min_id = 7252181
-    job_max_id = 7253874
+    job_min_id = 7339095
+    job_max_id = 7340477
     job_num = 270
-    job_name = "L12_prod_test-" # "out/7228219/L11_prod_test-"
+    job_name = "L16_prod_test-" # "out/7228219/L11_prod_test-"
 
     error_keywords_list = ["slurmstepd", "error", "CANCEL", "LIMIT", "kill"]
 
