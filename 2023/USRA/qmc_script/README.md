@@ -5,3 +5,8 @@ QMC through `rydberg_bloqade_ver.jl` and BloqadeQMC.
 See `qmc_runs` dir for sample scripts (eg `7007771.sh` for `L = 5`).
 
 Run `checking.py` to check all Slurm outputs, check if all jobs completed without issue (eg ran out of time/memory)
+
+Recursive copy
+```
+cp -R /home/hpcfung/scratch/qmc_data/L=11 /home/hpcfung/projects/def-rgmelko/hpcfung/L=11
+```
