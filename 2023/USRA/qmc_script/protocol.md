@@ -69,6 +69,7 @@ change `L`
 change `sbatch` copy and paste
 
 check scratch qmc_data empty  
+(double check all steps above)  
 run `sbatch`  
 (exit `.sh` file in IDE to avoid unwanted edits)
 
