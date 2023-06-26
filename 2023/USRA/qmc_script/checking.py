@@ -40,7 +40,6 @@ if __name__ == "__main__":
     - Checks that the last line in .out is of the form qmc program ... completed
     - Looks for error keywords in error_keywords_list
     - Also checks that all 270 jobs are present
-        - if one is missing, throws FileNotFoundError
 
     Error examples:
     slurmstepd: error: *** JOB 6800453 ON gra812 CANCELLED AT 2023-05-26T02:17:00 DUE TO TIME LIMIT ***
@@ -55,10 +54,10 @@ if __name__ == "__main__":
     - Change error_keywords_list
     """
 
-    job_min_id = 7339095
-    job_max_id = 7340477
+    job_min_id = 7397981
+    job_max_id = 7399139
     job_num = 270
-    job_name = "L16_prod_test-" # "out/7228219/L11_prod_test-"
+    job_name = "L19_prod_test-" # "out/7228219/L11_prod_test-"
 
     error_keywords_list = ["slurmstepd", "error", "CANCEL", "LIMIT", "kill"]
 
