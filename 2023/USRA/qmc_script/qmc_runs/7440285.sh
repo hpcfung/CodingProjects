@@ -2,7 +2,7 @@
 #SBATCH --array=0-269
 #SBATCH --time=57:00:00
 #SBATCH --job-name=L20_prod_test
-#SBATCH --mem=2G
+#SBATCH --mem=3G
 #SBATCH --output=L20_prod_test-%J.out
 #SBATCH --account=rrg-rgmelko-ab
 
