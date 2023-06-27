@@ -20,6 +20,7 @@ function save_as_csv(bin_path) # eg batch_01_samples.bin
         writedlm(io, Int.(permutedims(arr)), ' ')
     end
     # julia is column major, python is row major; transpose
+    # convert BitMatrix (TrueFalse) to int (10)
 
     println("$csv_path saved")
 end
@@ -64,8 +65,8 @@ end
 ###################### MAIN #############################
 
 # "/home/hpcfung/qmc_test/L=11"
-base_path = "/home/hpcfung/scratch/qmc_data/L=6"
-num_spins = 36
+base_path = "/home/hpcfung/scratch/qmc_data/L=11"
+num_spins = 11
 
 # /home/hpcfung/scratch/qmc_data/L=5/Rb=1.05/omega=1.00/delta=-0.13/beta=0.5/seed=1234/batch_01_samples.bin
 
