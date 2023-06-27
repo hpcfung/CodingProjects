@@ -13,6 +13,7 @@ git clone https://github.com/PIQuIL/RydbergGPT.git
 Or (probably should cd to a separate directory for that branch first)
 ```
 git clone -b yihongdev https://github.com/PIQuIL/RydbergGPT.git
+git clone -b main https://github.com/PIQuIL/RydbergGPT.git
 ```
 This step creates the `RydbergGPT` directory in your home directory.
 
@@ -24,12 +25,13 @@ apptainer build pytorch.sif pytorch_recipe.def
 ```
 Please select a module to run apptainer:
        MODULE          PARENT(S)
-    1  apptainer/1.1.6 StdEnv/2020
-    2  apptainer/1.1.5 StdEnv/2020
-    3  apptainer/1.1.3 StdEnv/2020
-Make a selection (1-3, q aborts) [1]: 1 # latest version
+    1  apptainer/1.1.8 StdEnv/2020
+    2  apptainer/1.1.6 StdEnv/2020
+    3  apptainer/1.1.5 StdEnv/2020
+    4  apptainer/1.1.3 StdEnv/2020
+Make a selection (1-4, q aborts) [1]: 1 # latest version
 ```
-(`yihongdev` branch uses `apptainer/1.1.8 StdEnv/2020`)
+(`yihongdev` branch uses `apptainer/1.1.8 StdEnv/2020`; old: `apptainer/1.1.6 StdEnv/2020`)
 ### Data
 Put the `data` folder inside `RydbergGPT` (after unzippinng)(`dat`a should contain 4 sub folders) 
 
