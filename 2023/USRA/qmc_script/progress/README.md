@@ -9,3 +9,6 @@
 du -hs /home/hpcfung/scratch/qmc_data/L=11
 ```
 https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line
+
+copy script  
+change `job-name`, `output`, `sbatch XX.sh`, `L=XX`
