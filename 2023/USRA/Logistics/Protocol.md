@@ -33,7 +33,7 @@ Make a selection (1-4, q aborts) [1]: 1 # latest version
 ```
 (`yihongdev` branch uses `apptainer/1.1.8 StdEnv/2020`; old: `apptainer/1.1.6 StdEnv/2020`)
 ### Data
-Put the `data` folder inside `RydbergGPT` (after unzippinng)(`dat`a should contain 4 sub folders) 
+Put the `data` folder inside `RydbergGPT` (after unzippinng)(`data` should contain 4 sub folders) 
 
 ### Install `rydberggpt`
 1.
