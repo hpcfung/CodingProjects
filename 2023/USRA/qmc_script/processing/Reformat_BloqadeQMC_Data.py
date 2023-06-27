@@ -16,7 +16,7 @@ import numpy as np
 # import matplotlib.pyplot as plt
 # from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-# import networkx as nx
+import networkx as nx
 
 import torch
 from torch import nn
@@ -63,12 +63,16 @@ def process_qmc_data(qmc_path, save_path):
     """
 
     # data_path = qmc_path # os.path.join(qmc_path, "data")
-    data_path = "/home/hpcfung/scratch/qmc_data/batch_01_samples.csv"
+    data_path = "/SCRATCHTAINER/qmc_data/batch_01_samples.csv"
+    # data_path = "$HOME/scratch/qmc_data/batch_01_samples.csv"
+    # data_path = "/home/hpcfung/scratch/qmc_data/batch_01_samples.csv"
+    # L=5, delta=-0.36, beta=0.5
+    # normally data_path used to find sample_path
 
     dfs = []
     filenames = []
     # TMP BEGINS
-    sample_path = "/home/hpcfung/scratch/qmc_data/batch_01_samples.csv" # os.path.join(directory, file)
+    sample_path = data_path # "/home/hpcfung/scratch/qmc_data/batch_01_samples.csv" # os.path.join(directory, file)
 
     filenames.append(sample_path)
 
@@ -245,8 +249,11 @@ def process_qmc_data(qmc_path, save_path):
 
 
 ########################################################################################
+# module load python/3.10
+# python Reformat_BloqadeQMC_Data.py
 
-save_path = os.path.abspath("/home/hpcfung/scratch/qmc_data/tmp_data")
+save_path = os.path.abspath("/SCRATCHTAINER/qmc_data/tmp_data")
+# "/home/hpcfung/scratch/qmc_data/tmp_data"
 # os.path.abspath("/home/hpcfung/scratch/qmc_data/data")
 
 qmc_path = "/home/hpcfung/scratch/qmc_data/L=5"
