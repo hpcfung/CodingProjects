@@ -8,5 +8,5 @@ change `job-name`, `output`, `sbatch XX.sh`, `julia XX.jl`, `program XX.jl compl
 copy `Reformat_BloqadeQMC_Data.py`, rename, put in `reformat` dir  
 change `qmc_path`, `L =`
 copy script  
-change `job-name`, `output`, `python LX.py`
+change `job-name`, `output`, `python LX.py`, `sbatch XX.sh`
 
