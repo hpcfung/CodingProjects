@@ -115,6 +115,10 @@ Changes from `train.sh` in the repo:
 
 By default, this runs for 1000 epochs?
 
+#### `Data` in `scratch`
+1. Copy `train.py` as `myTrain.py`
+2. Change `log_path`, `yaml_path`? `get_rydberg_dataloader` add `, data_path="/SCRATCHTAINER/qmc_data/data"`
+
 ### Tensorboard
 #### Set up venv
 Go to the `RydbergGPT` directory
