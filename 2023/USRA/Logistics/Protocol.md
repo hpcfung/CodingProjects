@@ -117,7 +117,33 @@ By default, this runs for 1000 epochs?
 
 #### `Data` in `scratch`
 1. Copy `train.py` as `myTrain.py`
-2. Change `log_path`, `yaml_path`? `get_rydberg_dataloader` add `, data_path="/SCRATCHTAINER/qmc_data/data"`
+2. For `get_rydberg_dataloader`, add `, data_path="/SCRATCHTAINER/qmc_data/data"`
+
+```
+#!/bin/bash
+#SBATCH --time=00:10:00
+#SBATCH --job-name=path_test
+#SBATCH --mem=16G
+#SBATCH --gpus-per-node=v100:1
+#SBATCH --output=path_test-%J.out
+#SBATCH --account=def-rgmelko
+
+module purge
+
+module load StdEnv/2020 apptainer/1.1.8
+
+# Declare the Python script name as a variable
+python_script_name="train.py"
+# python_script_name="examples/3_train_encoder_decoder.py"
+
+# cd RydbergGPT
+# sbatch scripts/myTrain.sh
+apptainer exec --nv --bind /home/hpcfung/scratch:/SCRATCHTAINER /home/hpcfung/RydbergGPT/container/pytorch.sif python /home/hpcfung/RydbergGPT/myTrain.py --config_name=config_small
+
+echo 'python program completed'
+
+# rrg-rgmelko-ab
+```
 
 ### Tensorboard
 #### Set up venv
