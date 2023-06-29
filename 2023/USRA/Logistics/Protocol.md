@@ -162,6 +162,7 @@ Go to the `RydbergGPT` directory
 module load python/3.10
 source TENSORBOARD_ENV/bin/activate
 tensorboard --logdir="logs"
+tensorboard --logdir="logs" --port=8008
 ```
 To look at one version only, use
 ```
