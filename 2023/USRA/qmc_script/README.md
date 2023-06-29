@@ -13,3 +13,5 @@ Recursive copy
 cp -R /home/hpcfung/scratch/qmc_data/L=11 /home/hpcfung/projects/def-rgmelko/hpcfung/L=11
 ```
 large L take a long time; use globus
+
+4. Go to `Processing`
