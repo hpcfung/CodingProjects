@@ -7,7 +7,7 @@
 copy `csv_con.sh`  
 change `job-name`, `output`, `sbatch XX.sh`, `julia XX.jl`, `program XX.jl completed`
 
-2. Convert to RydbergGPT readable format
+2. Convert to RydbergGPT readable format  
 copy `Reformat_BloqadeQMC_Data.py`, rename, put in `reformat` dir  
 change `qmc_path`, `L =`  
 copy script  
