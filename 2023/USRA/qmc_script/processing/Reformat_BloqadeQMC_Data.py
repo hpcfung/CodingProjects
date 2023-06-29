@@ -154,7 +154,6 @@ def process_qmc_data(qmc_path, save_path):
                         json.dump(config_dict, f)
 
                     print(f"{folder_path} generated.")
-                    sys.exit()
 
     return
 
