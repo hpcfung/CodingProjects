@@ -4,6 +4,7 @@ import os
 import sys
 import copy
 import re
+import time
 
 import itertools as itr
 import numpy as np
@@ -35,6 +36,13 @@ import json
 
 
 ########################################################################################
+def slicing_snake_flip(x):
+    _x = copy.deepcopy(x)
+    for i in range(_x.shape[-2]):
+        if i % 2 == 1:
+            _x[..., i, :] = _x[..., i, ::-1]
+    return _x
+
 def process_qmc_batch(batch_dir):
     """
     Reads batch 1 to 10 in batch_dir
@@ -50,6 +58,14 @@ def process_qmc_batch(batch_dir):
         )
         # decorrelate
         batch_measurements = batch_measurements[::decorrelation_rate,:]
+        # snake flip (measurements, spins)
+        # start = time.time()
+        batch_measurements = np.reshape(batch_measurements, (batch_measurements.shape[0],L,L))
+        batch_measurements = slicing_snake_flip(batch_measurements)
+        batch_measurements = np.reshape(batch_measurements, (batch_measurements.shape[0],L**2))
+        # end = time.time()
+        # print(end - start)
+
         measurements_list.append(batch_measurements)
     measurements = np.concatenate(measurements_list, axis=0)    
     print(measurements)
@@ -169,6 +185,7 @@ save_path = os.path.abspath("/SCRATCHTAINER/qmc_data/tmp_data")
 # os.path.abspath("/home/hpcfung/scratch/qmc_data/data")
 
 qmc_path = "/SCRATCHTAINER/qmc_data/L=5"
+L = 5
 
 rb_dict = {"1.05": 1.05, "1.15": 1.15, "1.30": 1.30}
 delta_dict = {"-0.36": -0.364386792453,
