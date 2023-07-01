@@ -3,7 +3,8 @@
 
 (Quality of life: set up VS remote)
 
-### Git clone
+### Git 
+#### Clone
 1. Go to home directory on Graham
 2. Go to https://github.com/PIQuIL/RydbergGPT/tree/main; <> Code button, HTTPS, copy link
 3. 
@@ -16,6 +17,13 @@ git clone -b yihongdev https://github.com/PIQuIL/RydbergGPT.git
 git clone -b main https://github.com/PIQuIL/RydbergGPT.git
 ```
 This step creates the `RydbergGPT` directory in your home directory.
+
+#### Pull
+```
+git remote -v
+git remote show origin
+git pull origin
+```
 
 ### Container
 ```
