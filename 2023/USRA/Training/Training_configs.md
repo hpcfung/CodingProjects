@@ -366,7 +366,7 @@ Memory Utilized: 5.72 GB
 Memory Efficiency: 35.72% of 16.00 GB
 ```
 ### 7648855
-num_workers = 8
+num_workers = 8  
 7% epoch 0
 ```
 Every 30.0s: nvidia-smi                                gra1338: Tue Jul  4 20:34:23 2023
