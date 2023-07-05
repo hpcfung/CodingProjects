@@ -1,7 +1,277 @@
 minimal: L=5, Rb=1.05, delta=-0.13, beta=0.5 to 64
 
+###
+8 cores
+
+### 7649790
+batch 2048
+```
+Every 15.0s: nvidia-smi                                gra1337: Tue Jul  4 21:21:07 2023
+
+Tue Jul  4 21:21:07 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:89:00.0 Off |                    0 |
+| N/A   37C    P0    55W / 300W |   1681MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     37180      C   /opt/conda/bin/python            1678MiB |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7649790
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:11:52
+CPU Efficiency: 28.39% of 00:41:48 core-walltime
+Job Wall-clock time: 00:10:27
+Memory Utilized: 5.57 GB
+Memory Efficiency: 34.80% of 16.00 GB
+```
+
+### 7649408
+batch 32768, 10 mins  
+29% epoch 0 (10 mins)
+```
+Every 15.0s: nvidia-smi                                gra1337: Tue Jul  4 21:09:27 2023
+
+Tue Jul  4 21:09:28 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:89:00.0 Off |                    0 |
+| N/A   39C    P0    66W / 300W |  19261MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     32886      C   /opt/conda/bin/python           19258MiB |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7649408
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:10:23
+CPU Efficiency: 25.12% of 00:41:20 core-walltime
+Job Wall-clock time: 00:10:20
+Memory Utilized: 7.61 GB
+Memory Efficiency: 47.59% of 16.00 GB
+```
+### 7649184
+batch 65536  
+did not start training?
+```
+Every 15.0s: nvidia-smi                                gra1337: Tue Jul  4 20:54:26 2023
+
+Tue Jul  4 20:54:26 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:89:00.0 Off |                    0 |
+| N/A   36C    P0    41W / 300W |      0MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7649184
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:05:13
+CPU Efficiency: 24.08% of 00:21:40 core-walltime
+Job Wall-clock time: 00:05:25
+Memory Utilized: 6.22 GB
+Memory Efficiency: 38.85% of 16.00 GB
+```
+
+### 7649018
+num_workers = 4, precision 16  
+18% epoch 0
+```
+Every 15.0s: nvidia-smi                                gra1338: Tue Jul  4 20:41:40 2023
+
+Tue Jul  4 20:41:40 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:8A:00.0 Off |                    0 |
+| N/A   49C    P0    58W / 300W |   5747MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     20271      C   /opt/conda/bin/python            5744MiB |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7649018
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:05:29
+CPU Efficiency: 25.86% of 00:21:12 core-walltime
+Job Wall-clock time: 00:05:18
+Memory Utilized: 5.72 GB
+Memory Efficiency: 35.72% of 16.00 GB
+```
+### 7648855
+num_workers = 8
+7% epoch 0
+```
+Every 30.0s: nvidia-smi                                gra1338: Tue Jul  4 20:34:23 2023
+
+Tue Jul  4 20:34:23 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:8A:00.0 Off |                    0 |
+| N/A   50C    P0    58W / 300W |   5167MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      3863      C   /opt/conda/bin/python            5164MiB |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7648855
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:04:56
+CPU Efficiency: 23.79% of 00:20:44 core-walltime
+Job Wall-clock time: 00:05:11
+Memory Utilized: 7.45 GB
+Memory Efficiency: 46.58% of 16.00 GB
+```
+
+### 7648646
+num_workers = 40  
+did not start training?
+```
+Every 30.0s: nvidia-smi                                gra1338: Tue Jul  4 20:21:37 2023
+
+Tue Jul  4 20:21:37 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:8A:00.0 Off |                    0 |
+| N/A   47C    P0    43W / 300W |      0MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7648646
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:05:05
+CPU Efficiency: 25.17% of 00:20:12 core-walltime
+Job Wall-clock time: 00:05:03
+Memory Utilized: 5.46 GB
+Memory Efficiency: 34.11% of 16.00 GB
+```
 ### 7648476
-same (print cpu count)
+same (print cpu count)  
+15% epoch 0
+```
+Every 30.0s: nvidia-smi                                gra1338: Tue Jul  4 20:13:34 2023
+
+Tue Jul  4 20:13:34 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:8A:00.0 Off |                    0 |
+| N/A   50C    P0    71W / 300W |   5167MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      4002      C   /opt/conda/bin/python            5164MiB |
++-----------------------------------------------------------------------------+
+```
 
 ### 7648273
 same  
