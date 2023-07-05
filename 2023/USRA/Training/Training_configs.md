@@ -1,5 +1,45 @@
 minimal: L=5, Rb=1.05, delta=-0.13, beta=0.5 to 64
 
+### 7665062
+save to RAM, 1 gpu, 4 cpus, 4 workers  
+48% epoch 0
+```
+Every 15.0s: nvidia-smi                                gra1338: Wed Jul  5 12:56:47 2023
+
+Wed Jul  5 12:56:47 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.105.17   Driver Version: 525.105.17   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:15:00.0 Off |                    0 |
+| N/A   43C    P0    60W / 300W |   1681MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     16181      C   /opt/conda/bin/python            1678MiB |
++-----------------------------------------------------------------------------+
+```
+```
+Job ID: 7665062
+Cluster: graham
+User/Group: hpcfung/hpcfung
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:11:15
+CPU Efficiency: 28.12% of 00:40:00 core-walltime
+Job Wall-clock time: 00:10:00
+Memory Utilized: 5.55 GB
+Memory Efficiency: 34.68% of 16.00 GB
+```
 ### 7655222
 2 gpus, 8 cpus, 8 workers  
 76%
