@@ -52,12 +52,13 @@ if __name__ == "__main__":
 
     If necessary:
     - Change error_keywords_list
+    - comment out 'does not exist' (line 6)
     """
 
-    job_min_id = 7397981
-    job_max_id = 7399139
+    job_min_id = 7440285
+    job_max_id = 7569576
     job_num = 270
-    job_name = "L19_prod_test-" # "out/7228219/L11_prod_test-"
+    job_name = "L20_prod_test-" # "out/7228219/L11_prod_test-"
 
     error_keywords_list = ["slurmstepd", "error", "CANCEL", "LIMIT", "kill"]
 
