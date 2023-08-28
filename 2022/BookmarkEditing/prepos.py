@@ -3,6 +3,8 @@ import sys, re
 
 if __name__ == "__main__":
     """
+    TO DO: add feature - check page number is numeric (so that X need to run format2 and find error there then go back here)
+    
     Purpose: preprocess text from content page (add Ch., p.)
     
     1. change input_filename
@@ -24,7 +26,7 @@ if __name__ == "__main__":
     skip_after_word = False
     skip_word = 'Appendices'
 
-    input_filename = 'jaeger'
+    input_filename = 'Zargham'
     file1 = open(input_filename + '.txt', 'r')
     Lines = file1.readlines()
     Lines_write = []
@@ -43,6 +45,11 @@ if __name__ == "__main__":
 
             main, space, page = newline.rpartition(' ') # split the string at the last occurrence of ' '
             newline = main+space+'p.'+page
+            if page.endswith('\n'):
+                page = page[:-1] # eg if page is '123\n'
+            if not page.isdigit():
+                print(f"Warning, incorrect page number in: {newline}")
+                sys.exit()
 
             if add_ch:
                 ch, space, rest = newline.partition(' ')
