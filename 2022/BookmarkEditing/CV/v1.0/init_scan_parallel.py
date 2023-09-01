@@ -47,13 +47,16 @@ def visualize(image,results,k):
         pickle.dump(results, f)
 
 def scan_page(k):
-    prename = 'p1go2rdb8p72k6181k91ok918pb4'
+    prename = 'Tom Hayes_ Paul Horowitz - Learning the Art of Electronics_ A Hands-On Lab Course-Cambridge University Press (2016)' # breaks if moved to main
     print(f"page {k}")
-    page_num = str(k-1) # str(k)
-    # img_path = 'ilovepdf_pages-to-jpg/'+prename+'_page-'+'0'*(4-len(page_num)) +page_num+'.jpg'
-    img_path = 'ilovepdf_pages-to-jpg/' + prename + '-' + page_num + '.jpg'
-    # 'output/'+page_num+'.jpg'
-    # 'ilovepdf_pages-to-jpg/book_page-'+'0'*(4-len(page_num)) +page_num+'.jpg'
+    page_num = str(k).zfill(4)
+    img_path = 'ilovepdf_pages-to-jpg/'+prename+'_page-'+page_num+'.jpg'
+    # page_num = str(k-1) # for the 2nd conversion software, zero-based?
+    # img_path = 'ilovepdf_pages-to-jpg/' + prename + '-' + page_num + '.jpg' # which conversion software is this?
+
+    # debugging
+    # print(img_path)
+    # return
 
     image = cv2.imread(img_path)
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -64,15 +67,25 @@ def scan_page(k):
 
 if __name__ == "__main__":
     """
-    change name into sth shorter before feeding into i love pdf?
-    change str(k-1) to str(k) next time before use
+    Behavior: Given a book of jpgs, runs OCR, stores words and their positions in {bookname}.pkl files in dict
     
-    set min_page, max_page for the range of pages to be scanned
+    1. Clear annotated, dict directories
+    2. Change prename in scan_page
+    3. Change img_path in scan_page depending on the conversion software?
+    4. Set min_page, max_page for the range of pages to be scanned
+       - literal page number, not zero-based
+       - as many as possible? it's ok to cover more than is needed in the next step (no need to go back and forth)
+    5. Change bookname in visualize to a shortened version of the name of the book
+       - same name to be fed into prepos
+    
+    
+    Change name into sth shorter before feeding into i love pdf?
+    process_time does not work (only counts time for each task/process?)
     """
     start = time.process_time()
 
-    min_page = 22
-    max_page = 533  # 533
+    min_page = 29
+    max_page = 1155
 
     with Pool() as p:
         p.map(scan_page, list(range(min_page,max_page+1)))
