@@ -7,7 +7,6 @@ def preprocessing(line):
 
     return line.replace('\u2003', ' ').replace('\u2002', ' ')
 
-
 def line_is_incomplete(line):
     if line.startswith('CHAPTER'): # in some books, CHAPTER and chapter title are always on different lines
         return True
@@ -18,6 +17,7 @@ def line_is_incomplete(line):
     if not page.isdigit(): # if not only a page num
         return True
     return False
+
 
 if __name__ == "__main__":
     """
