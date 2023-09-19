@@ -2,6 +2,8 @@
 
 python: use which interpreter?
 
+check interpreter used by IDE
+
 cd before pip
 
 pip freeze first to see if "main" interpreter
