@@ -79,11 +79,13 @@ class ScanPage:
         # set averages
         self.lines[-1][2] = statistics.fmean(self.lines[-1][2])
         self.lines[-1][3] = statistics.fmean(self.lines[-1][3])
+        if debug:
+            print(self.lines[-1])
         if not self.is_line():
             self.lines.pop()
 
     def is_line(self):
-        return self.lines[-1][3] > 30
+        return self.lines[-1][3] > 28 # 30
 
     def get_font_size(self,text,width,height):
         """
@@ -102,82 +104,24 @@ class ScanPage:
         # len(text)
         return width/weighted_width+height/vert_spread
 
-def scan_page(k):
-    """
-    Given page number k, adds all titles found on page k to add_titles
+def get_title(original_target_title):
+    Exceptions = ['Reactions to This Positive Story 39\n',
+                  'Personal Mini-Experiments: What You Want to Experience 45\n',
+                  'Chapter 2 Eastern and Western Perspectives on Positive Psychology: How “ME + WE = US” Might Bridge the Gap\n',
+                  'Personal Mini-Experiments: Getting and Giving Help 83\n',
+                  'Chapter 6 The Principles of Pleasure: Understanding Positive Affect, Positive Emotions, Happiness, and Well-Being 219\n',
+                  'Chapter 7 Making the Most of Emotional Experiences: Emotion-Focused Coping, Emotional Intelligence, Socioemotional Selectivity, and Emotional Storytelling 267\n',
+                  'Living With Mindfulness: The Women’s Heart Foundation 440\n',
+                  'Appendix A: Effective Secondary Preventions (Psychotherapies) for Adult Problems\n',
+                  'Chapter 15 Positive Schooling and Good Work: The Psychology of Gainful Employment and the Education That Gets Us There 657\n',
+                  'Part VIII Finding Strengths in Others: Embodying Strengths in Everyday Life 732\n']
 
-    New strategy: construct lines using line spacing first, then check is_title
-
-    Strategy: quick check is_title once, then double_check_is_title using line spacing
-    No need to filter every false positive (though useful if many of the same case, such that easy to filter)
-    Important part: just make sure no actual section is missing
-
-    """
-    global all_titles
-
-    page_num = str(k)
-    with open('dict/' + bookname + page_num + '.pkl', 'rb') as f:
-        results = pickle.load(f)  # structure of results: see docstring of scraping.page_info_dump
-
-    if debug:
-        scraping.page_info_dump(results)
-        sys.exit()
-
-    lines_text = []
-    lines_most_left = []
-    lines_top = []
-    lines_height = []
-    for i in range(0, len(results["text"])):
-        text, conf, x, y = scraping.get_word_attributes(results=results, idx=i)
-        if re.fullmatch(r'( )*', text) or conf < 0: # not a proper word
-            continue
-
-
-
-        if is_title(results=results, idx=i, text=text, conf=conf, x=x, y=y):  # 2nd word in same row: is_title is False
-            print('-' * 50)
-            print("Confidence: {}".format(conf))
-            print("Title candidate: {}".format(text))
-            print(f"{(x, y)}")
-            print("")
-
-            title = scraping.remove_end_dot(text)
-
-            ub = y + line_space  # upper bound
-            lb = y - line_space
-
-            if scraping.double_check_is_title(results=results, i=i, lb=lb, ub=ub):
-                print('is title\n')
-                print('%' * 30)
-                print('Remainder of title:')
-            else:
-                print('not_title')
-                continue
-
-            j = i + 1
-            while j < len(results["text"]):  # repeat until last word
-                text, conf, x, y = scraping.get_word_attributes(results=results, idx=j)
-
-                if lb < y and y < ub:
-                    print("Confidence: {}".format(conf))
-                    print("Text: {}".format(text))
-                    print(f"{(x, y)}")
-                    print("")
-                    title = title + ' ' + text
-                else:
-                    break
-                j += 1
-            if not_title(title):
-                continue
-            all_titles.append(title + ' ' + page_num + '\n')
-
-def get_title(target_title):
     global current_pointer
-    if target_title.endswith('\n'): # remove trailing \n
-        target_title = target_title[:-1]
+    target_title = original_target_title.strip('\t\n') # leading \t and trailing \n
     print(f"target: {repr(target_title)}")
     max_sim = -1
     max_title = ''
+    max_pointer = current_pointer
     for pointer, possible_title in enumerate(all_titles):
         if pointer < current_pointer:
             continue
@@ -185,19 +129,33 @@ def get_title(target_title):
             current_pointer = pointer + 1
             print(current_pointer)
             print(f"match: {repr(possible_title)}")
-            return reconstruct_title(target_title,possible_title)
+            return reconstruct_title(original_target_title,possible_title)
+        if target_title.startswith('Personal Mini-Experiments') and 'Personal Mini-Experiments' in possible_title:
+            current_pointer = pointer + 1
+            print(current_pointer)
+            print(f"Personal Mini-Experiments match: {repr(possible_title)}")
+            return reconstruct_title(original_target_title, possible_title)
+        for exc in Exceptions:
+            if target_title in exc:
+                print(f"Exception: {repr(exc)}")
+                return exc
         similar = fuzz.ratio(target_title, possible_title)
         if verbose:
             print(repr(possible_title), similar)
         if similar > max_sim:
             max_sim = similar
             max_title = possible_title
+            max_pointer = pointer
     print(f'Sim score only: {repr(max_title)} score {max_sim}')
-    return reconstruct_title(target_title,max_title)
+    if max_sim < 70: # possible: no matches, need to put in Exceptions
+        print(f"Warning: {repr(target_title)}")
+        sys.exit()
+    current_pointer = max_pointer + 1
+    return reconstruct_title(original_target_title,max_title)
 
 def reconstruct_title(title_name, OCR_title):
     page_num = OCR_title.rpartition(" ")[2]
-    return title_name + ' ' + page_num
+    return title_name.strip('\n') + ' ' + page_num
 
 
 if __name__ == "__main__":
@@ -213,6 +171,10 @@ if __name__ == "__main__":
     Problem: OCR content page
     if pdf already has OCR text, copy content page?
     use this OCR to automatically tab?
+    
+    Implement multiline parsing? into one title
+    
+    Whatever solution: will need to deal with exceptions, modify code, case by case
     
     Note: all pages exact, not zero based
     1. Change bookname to the one used in init_scan_parallel.py
@@ -247,7 +209,7 @@ if __name__ == "__main__":
 
     line_space = 13  # narrow = better? this controls bounds around a line, should be (much) smaller than line spacing
 
-    min_page = 21
+    min_page = 21 # 21
     max_page = 1089 # 1089
 
     debug = False
