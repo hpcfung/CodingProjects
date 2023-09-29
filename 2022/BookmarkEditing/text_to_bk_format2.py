@@ -18,7 +18,7 @@ def add_prefix(line):
         else:
             return line
     # modify this depending on doc
-    tab_list = ['REFERENCES','EXERCISES'] # 'References','Exercises'
+    tab_list = [] # 'References','Exercises'
     for check_word in tab_list:
         # if check_word in line:
         #     return '\t' + line
@@ -45,7 +45,7 @@ def add_prefix(line):
 def add_suffix(line):
     global last_page_num
 
-    partition = line.partition("p.")
+    partition = line.rpartition("p.")
     title = partition[0]
     # remove spacebar before p.
     title = title[:-1]
@@ -84,25 +84,27 @@ if __name__ == "__main__":
        - eg Index is not tabbed by default because it has no dots
        - if not necessary, check that tab_list is empty
        - if necessary: add if blocks
-    5. Change depth_offset (for default behaviro: 0; if chapter: XV., depth_offset = 1)
+    5. Change depth_offset (for default behavior: 0; if chapter: XV., depth_offset = 1)
        - note: if depth_offset = 1, then eg Bibliography, depth = -1, but still works (no tabs)
     6. Toggle skip_after_word, and if true, change skip_word
        - Stops tabbing after skip_word (return line as is)
        
-    default behavior: not dots = no tab
-    gives warning if page number decreases from entry to entry
+    Default behavior: not dots = no tab
+    Gives warning if page number decreases from entry to entry
+    
+    Copy and edit for special cases
     
     """
 
-    input_filename = 'arch'
-    file1 = open(input_filename+'_prepos.txt', 'r')
+    input_filename = 'nmr'
+    file1 = open(input_filename+'_prepos.txt', 'r', encoding="utf8")
     Lines = file1.readlines()
     Lines_write = []
 
     with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 10
+    offset = 26
     offset_list = []
     # offset_list = [('10 Self-Assembly',32),
     #                ('12 Biological Mimics and',31),
@@ -110,12 +112,13 @@ if __name__ == "__main__":
     #                ('14 Supramolecular Polymers, Gels',29),
     #                ('15 Nanochemistry',28)]
 
-    depth_offset = 0
+    depth_offset = 1
 
-    skip_after_word = False
-    skip_word = 'Appendices'
+    skip_after_word = True
+    skip_word = 'Preface'
+
+    # Settings over
     skip_all = False
-
     last_page_num = -1
     for i, line in enumerate(Lines):
         print(repr(line))
@@ -133,7 +136,7 @@ if __name__ == "__main__":
 
     file1.close()
 
-    file2 = open(input_filename+'_prepos_FORMATTED.txt', 'w')
+    file2 = open(input_filename+'_prepos_FORMATTED.txt', 'w', encoding="utf8")
     file2.writelines(Lines_write)
     file2.close()
 
