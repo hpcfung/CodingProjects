@@ -2,4 +2,4 @@
 
 
 
-LLM cannot output `.doc` directly?
+LLM cannot output `.docx` directly?
