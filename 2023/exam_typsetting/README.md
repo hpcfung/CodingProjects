@@ -25,3 +25,8 @@ Note that the Qs as given are not numbered?
 eg manually insert sth like _2153 token at page end or at end of MCQ, program automatically splits into segments
 
 feeds each segment into LLM; clean typos, then insert latex like macros
+
+#### 4
+Do the whole thing in regex
+
+Some sort of beautify code operation.
