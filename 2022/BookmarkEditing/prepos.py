@@ -8,20 +8,19 @@ def preprocessing(line):
     return line.replace('\u2003', ' ').replace('\u2002', ' ')
 
 def line_is_incomplete(line):
-    if line.startswith('CHAPTER'): # in some books, CHAPTER and chapter title are always on different lines
-        return True
+    # if line.startswith('CHAPTER'): # in some books, CHAPTER and chapter title are always on different lines
+    #     return True
 
     main, space, page = line.rpartition(' ')
     if page.endswith('\n'):
         page = page[:-1]  # eg if page is '123\n'
-    if not page.isdigit(): # if not only a page num
-        return True
-    return False
+    return not page.isdigit() # is incomplete if not only a page num
 
 
 if __name__ == "__main__":
     """
     TO DO: add feature - check page number is numeric (so that X need to run format2 and find error there then go back here)
+    number: ascending number
     
     Purpose: preprocess text from content page (add Ch., p.)
     
@@ -33,7 +32,7 @@ if __name__ == "__main__":
     3. Toggle skip_after_word; if set to true, also change skip_word
        - Stops adding Ch. after skip_word
     4. Change 'CHAPTER' in if line.startswith('CHAPTER')
-    5. Change preprocessing if necessary
+    5. Change preprocessing(line) if necessary
        
     Known issues: cannot deal with microsoft fancy '
     
@@ -42,12 +41,12 @@ if __name__ == "__main__":
     - automatically adds Ch. to every row unless specified not to
     - sometimes, one title is split into several lines; automatically joins them 
     """
-    add_ch = False
+    add_ch = False # 2.
     remove_dots = False
-    skip_after_word = False
+    skip_after_word = False # 3.
     skip_word = 'Appendices'
 
-    input_filename = 'org'
+    input_filename = 'func' # 1.
     file1 = open(input_filename + '.txt', 'r', encoding="utf8")
     Lines = file1.readlines()
     Lines_write = []
