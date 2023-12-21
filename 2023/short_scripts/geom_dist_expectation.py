@@ -1,7 +1,10 @@
 import random
 
 class randTrials:
-    """Model: a misogynistic couple keeps having children until a boy is born. What is the average number of boys and girls per couple?"""
+    """Model: a misogynistic couple keeps having children until a boy is born. 
+    What is the average number of boys and girls per couple?
+    Theoretical analysis here:
+    https://twitter.com/alpha_narcos/status/1737785127193780669"""
     def __init__(self, num_trials):
         self.num_trials = num_trials
         self.num_boys = 0
