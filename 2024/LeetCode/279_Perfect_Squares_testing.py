@@ -1,4 +1,5 @@
 from matplotlib import pyplot as plt
+from math import log
 
 class Solution:
     def numSquares(self, n: int) -> int:
@@ -33,10 +34,13 @@ if __name__ == '__main__':
     for k in range(1, max_n+1):
         mySol.numSquares(k)
         all_counts.append(mySol.count)
+        # all_counts.append(log(mySol.count))
         _sum += mySol.count
         avg = _sum / k
         all_avgs.append(avg)
+        # all_avgs.append(log(avg))
         print(k, mySol.count, avg)
     plt.plot(range(1, max_n+1), all_counts)
     plt.plot(range(1, max_n+1), all_avgs)
+    # plt.plot(all_avgs, all_counts)
     plt.show()
