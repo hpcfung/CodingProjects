@@ -50,9 +50,8 @@ def calc_prefix(depth1,depth2,line,address):
 
 def check_if_skip(line):
     global in_part
-    avoid_these = ['Some thoughts about this book',
-                   'Contents',
-                   'Index']
+    avoid_these = ['Title',
+                   'Contents']
     if with_parts:
         avoid_these = avoid_these + part_titles
         if part_titles[0] in line:
@@ -79,7 +78,7 @@ if __name__ == "__main__":
        
        
        if with_parts = True:
-    3. avoid these?
+    3. avoid these in check_if_skip: gets copied as is, does not affect future addresses
     
     How it works
     eg Section 12.1.3 has address [12, 1, 3]
@@ -87,7 +86,7 @@ if __name__ == "__main__":
     eg depth1 = 2, depth2 = 2 -> new address = [12, 1, 3] 
     (this is a new subsection, so increment by 1)
     '''
-    input_filename = 'chem'
+    input_filename = 'con'
     file1 = open(input_filename+'.txt', 'r')
     Lines = file1.readlines()
     Lines2 = Lines.copy()
