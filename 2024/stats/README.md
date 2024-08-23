@@ -19,5 +19,9 @@ for k in range(N):
     _sum += sum(random() < p for i in range(n))
 print(f"avg X = {_sum/N}")
 ```
+
+## 3
+https://media.discordapp.net/attachments/1259678646440820827/1276004270235451524/image.png?ex=66c9ed55&is=66c89bd5&hm=4c9f380acea0c798eba8b4ab417c9297c80b52eb390b881828257b78a95e2cf8&=&format=webp&quality=lossless&width=428&height=545
+
 ## 7
 https://media.discordapp.net/attachments/1259678646440820827/1276313487257243688/Screenshot_20240822-185351.png?ex=66c91310&is=66c7c190&hm=247de183ca98cb90bd50db8bc383d3ad13f5a4fbf8d1647951c08748de089b0e&=&format=webp&quality=lossless&width=257&height=545
