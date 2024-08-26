@@ -41,5 +41,40 @@ for x in range(n+1):
     print(x, comb(n, x)*(p**x)*((1-p)**(n-x)))
 ```
 
+## 4
+edit
+```
+from math import comb, sqrt
+from random import random, sample
+import itertools
+
+def value(seq):
+    if 2 in seq:
+        return 10
+    r,b,y = seq
+    return 20*r+10*b+5*y
+
+N = 10**2 # 5
+# colors = {'red':0, 'black':1, 'yellow':2}
+colors = ['red', 'black', 'yellow']
+history = {(x,y,z):0 for x in range(3) for y in range(3) for z in range(3) if x+y+z==2}
+
+value_sum = 0
+for k in range(N):
+    balls = sample(range(3), counts=[2, 3, 6], k=2)
+    seq = [0,0,0]
+    for ball in balls:
+        seq[ball] += 1
+    # print(seq)
+    seq = tuple(seq)
+    history[seq] += 1
+    value_sum += value(seq)
+print(history)
+for seq in history.keys():
+    in_words = list(itertools.chain.from_iterable([colors[x]]*seq[x] for x in range(3)))
+    print(in_words)
+print(value_sum/N)
+```
+
 ## 7
 https://media.discordapp.net/attachments/1259678646440820827/1276313487257243688/Screenshot_20240822-185351.png?ex=66c91310&is=66c7c190&hm=247de183ca98cb90bd50db8bc383d3ad13f5a4fbf8d1647951c08748de089b0e&=&format=webp&quality=lossless&width=257&height=545
