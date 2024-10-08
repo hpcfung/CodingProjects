@@ -6,6 +6,8 @@ Also data (COMSOL?)
 ## Usage
 See `.py` for sample script, for typical usage
 
+initialize object; print and return voltages?
+
 more advanced features: change default args
 
 or change code/logic (eg micromotion optimization)
