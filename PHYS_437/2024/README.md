@@ -6,12 +6,15 @@ Also data (COMSOL?)
 ## Usage
 See `.py` for sample script, for typical usage
 
+(class signature here)
+
 initialize object; print and return voltages?
 
 more advanced features: change default args
 
 or change code/logic (eg micromotion optimization)
 
+(talk about logic, algo here)
 
 
 ## FAQ
@@ -31,6 +34,7 @@ default params
 - quadratic
 - weights
 - nondim = False
+- `optim_type == 'coeff'`
 
 leave characterization as legacy code?
 
