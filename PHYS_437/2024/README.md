@@ -33,3 +33,5 @@ default params
 leave characterization as legacy code?
 
 micromotion: DC null and AC null, another optimization, another weight
+
+implement rotation: easy, just rotate (x+y)**2, get coeff; eg for cross terms eg xy
