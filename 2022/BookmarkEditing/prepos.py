@@ -26,6 +26,7 @@ if __name__ == "__main__":
     
     1. Change input_filename
     2. Toggle add_ch and remove_dots
+       - add_ch: eg Ch.2 in titles
        - If add_ch: change items to skip over inside "if add_ch:" (ie don't add Ch. to these)
           - note that automatically skips eg A.2 even without explicitly skip these
        - remove_dots: adjust regex (eg .... vs . . . .)
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     skip_after_word = False # 3.
     skip_word = 'Appendices'
 
-    input_filename = 'func' # 1.
+    input_filename = 'nuclear' # 1.
     file1 = open(input_filename + '.txt', 'r', encoding="utf8")
     Lines = file1.readlines()
     Lines_write = []
