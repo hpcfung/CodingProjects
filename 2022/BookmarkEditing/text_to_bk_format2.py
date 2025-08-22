@@ -18,17 +18,12 @@ def add_prefix(line):
         else:
             return line
     # modify this depending on doc
-    tab_list = [] # 'References','Exercises'
+    tab_list = ['Problem'] # 'References','Exercises'
     for check_word in tab_list:
         # if check_word in line:
         #     return '\t' + line
-
-        # if starts with check_word
-        if line[0:len(check_word)] == check_word:
+        if line.startswith(check_word):
             return '\t' + line
-
-    # if line[0:6] == 'Design' or line[0:3] == 'The':
-    #     return '\t\t' + line
 
     prefix = line.partition(" ")[0]
     depth = prefix.count('.') - depth_offset
@@ -96,7 +91,7 @@ if __name__ == "__main__":
     
     """
 
-    input_filename = 'nmr'
+    input_filename = 'nuclear'
     file1 = open(input_filename+'_prepos.txt', 'r', encoding="utf8")
     Lines = file1.readlines()
     Lines_write = []
@@ -104,7 +99,7 @@ if __name__ == "__main__":
     with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 26
+    offset = 16
     offset_list = []
     # offset_list = [('10 Self-Assembly',32),
     #                ('12 Biological Mimics and',31),
@@ -112,9 +107,9 @@ if __name__ == "__main__":
     #                ('14 Supramolecular Polymers, Gels',29),
     #                ('15 Nanochemistry',28)]
 
-    depth_offset = 1
+    depth_offset = 0
 
-    skip_after_word = True
+    skip_after_word = False
     skip_word = 'Preface'
 
     # Settings over
