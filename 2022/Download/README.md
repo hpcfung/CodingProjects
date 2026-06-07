@@ -6,6 +6,8 @@ how does chrome load it?
 
 drag picture, base64, convert to jpg = data url
 
+manually: Sources, Copy image as URI
+
 https://web.dev/howbrowserswork/
 
 https://www.freecodecamp.org/news/web-application-security-understanding-the-browser-5305ed2f1dac/
