@@ -1,4 +1,4 @@
-import sys
+import sys, re
 
 
 def add_prefix(line):
@@ -17,8 +17,10 @@ def add_prefix(line):
             return '\t' + line
         else:
             return line
+    # if re.search(r"^\d+\.(?!\d)", line):
+    #     return line
     # modify this depending on doc
-    tab_list = ['Problem'] # 'References','Exercises'
+    tab_list = ['Appendix', 'Exercise'] # 'References','Exercises'
     for check_word in tab_list:
         # if check_word in line:
         #     return '\t' + line
@@ -79,6 +81,7 @@ if __name__ == "__main__":
        - eg Index is not tabbed by default because it has no dots
        - if not necessary, check that tab_list is empty
        - if necessary: add if blocks
+       - use short words
     5. Change depth_offset (for default behavior: 0; if chapter: XV., depth_offset = 1)
        - note: if depth_offset = 1, then eg Bibliography, depth = -1, but still works (no tabs)
     6. Toggle skip_after_word, and if true, change skip_word
@@ -91,7 +94,7 @@ if __name__ == "__main__":
     
     """
 
-    input_filename = 'nuclear'
+    input_filename = 'Galois'
     file1 = open(input_filename+'_prepos.txt', 'r', encoding="utf8")
     Lines = file1.readlines()
     Lines_write = []
@@ -99,13 +102,15 @@ if __name__ == "__main__":
     with_parts = False
 
     # actual page in pdf - printed page number
-    offset = 16
+    offset = 17
     offset_list = []
-    # offset_list = [('10 Self-Assembly',32),
-    #                ('12 Biological Mimics and',31),
-    #                ('13 Interfaces and Liquid',30),
-    #                ('14 Supramolecular Polymers, Gels',29),
-    #                ('15 Nanochemistry',28)]
+    # offset_list = [('Chapter 2',10),
+    #                ('Chapter 4',9),
+    #                ('Chapter 6', 8),
+    #                ('Chapter 8', 7),
+    #                ('47. Symmetry', 9),
+    #                ('List of', 8),
+    #                ('Index of', 7)]
 
     depth_offset = 0
 
